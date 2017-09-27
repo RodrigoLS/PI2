@@ -1,0 +1,36 @@
+
+body{
+	background-color: #BD0100;
+	display: -webkit-flex;
+  	display: flex;
+  	-webkit-align-items: center;
+  	align-items: center;
+  	-webkit-justify-content: center;
+  	justify-content: center;
+}
+
+.main{
+  min-height: 400px;
+  min-width: 400px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  border-radius: 20px;
+  box-shadow: 5px 5px black;
+}
+
+label{
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  color: #BD0100;;
+  text-shadow: 1px 1px black;
+}
+
+img{
+  padding: 5px;
+  border: black 2px;
+}
+
