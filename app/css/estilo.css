@@ -37,18 +37,22 @@ nav{
 }
 
 section{
-  min-height: 400px;
-  min-width: 400px;
-  display: flex;
-  align-items: center;
+  align-items: left;
   justify-content: center;
 }
 
-section img{
+section img#LogoMenu{
+  width: 200px;
+  height: 200px;
   border-color: black;
   border: solid;
   border-width: 3px;
   border-radius: 50%;
+  position: absolute;
+  left: 100%;
+  top: 100%;
+  margin-left: -210px;
+  margin-top: -280px;
 }
 
 #rodape{
@@ -75,4 +79,3 @@ label{
 img{
   padding: 5px;
 }
-
