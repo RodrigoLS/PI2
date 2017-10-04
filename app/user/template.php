@@ -10,7 +10,7 @@
 		<nav>
 			<div class="nav-wrapper">
 		      <ul  class="left">
-		        <li><a href="../user">Usuario</a></li>
+		        <li><a href="/user">Usuario</a></li>
 				<li><a>Categoria</a></li>
 				<li><a>Produto</a></li>
 				<li><a href="sair.php">Sair</a></li>
@@ -19,15 +19,7 @@
     	</nav>
 	</div>
 		<section>
-			 <?php  
-			 	session_start();
-			 	echo "<p> Olá, " . $_SESSION['nomeUsuario'] . ".</p>";
-			 	echo "<p> O sistema ainda está em desenvolvimento. </p>";
-			 	echo "<p> Desde já, pedimos desculpas pelo transtorno.</p>";
-			 	echo "<p> Atenciosamente, equipe HIPPO. </p>";
-			 ?>
-
-			 <img src="../img/LogoHippo.jpg" alt="Logo Loja" width="200px" height="200px" id="LogoMenu">
+			<p>CRUD usuário.</p>
 		</section>
 	<div id="rodape">
 		<p>Copyright © 2017</p>
