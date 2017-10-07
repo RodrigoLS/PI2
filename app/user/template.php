@@ -6,23 +6,15 @@
 	<link rel="stylesheet" type="text/css" href="../css/estilo.css">
 </head>
 <body>
-	<div id="cabecalho"> 
-		<nav>
-			<div class="nav-wrapper">
-		      <ul  class="left">
-		        <li><a href="/user">Usuario</a></li>
-				<li><a>Categoria</a></li>
-				<li><a>Produto</a></li>
-				<li><a href="sair.php">Sair</a></li>
-		      </ul>
-	    	</div>
-    	</nav>
-	</div>
+	<?php  
+		require('../layout/cabecalho.php');
+	?>
 		<section>
 			<p>CRUD usuário.</p>
 		</section>
-	<div id="rodape">
-		<p>Copyright © 2017</p>
-	</div>
+	
+	<?php  
+		require('../layout/rodape.php');
+	?>
 </body>
 </html>		
