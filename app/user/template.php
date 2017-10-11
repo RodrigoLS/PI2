@@ -10,7 +10,33 @@
 		require('../layout/cabecalho.php');
 	?>
 		<section>
-			<p>CRUD usuário.</p>
+			<table>
+				<tr>
+					<td>ID</td>
+					<td>Login</td>
+					<td>Nome</td>
+					<td>Perfil</td>
+					<td>Ativo</td>
+					<td>Editar</td>
+					<td>Excluir</td>
+				</tr>
+
+				<?php
+					foreach ($usuarios as $idUsuario => $dadosUsuario) {
+						echo 
+						"<tr>
+							<td> $idUsuario </td>
+							<td> {$dadosUsuario['loginUsuario']} </td>
+							<td> {$dadosUsuario['nomeUsuario']} </td>
+							<td> {$dadosUsuario['tipoPerfil']} </td>
+							<td> {$dadosUsuario['usuarioAtivo']} </td>
+							<td> e </td>
+							<td> x </td>
+						</tr>";
+					} 
+
+				?>
+			</table>
 		</section>
 	
 	<?php  
