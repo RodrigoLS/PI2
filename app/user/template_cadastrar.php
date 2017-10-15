@@ -5,26 +5,30 @@
 </head>
 <body>
 
-<?php include('cabecalho.php') ?>
+<section>
+	<?php include('cabecalho.php') ?>
 
-<form method="POST">
-	<label>Login:</label> <input type="text" name="loginUsuario"> <br>
+	<a href="index.php"> Voltar </a>
 
-	<label>Nome:</label> <input type="text" name="nomeUsuario"> <br>
+	<form method="POST">
+		<label>Login:</label> <input type="text" name="loginUsuario"> <br>
 
-	<label>Perfil:</label> 
-	<select name="perfilUsuario">
-		<option value="">Escolha</option>
-		<option value="A">Administrador</option>
-		<option value="C">Colaborador</option>
-	</select> <br>
+		<label>Senha:</label> <input type="password" name="senhaUsuario">
 
-	<label>Ativo</label> <input type="checkbox" name="usuarioAtivo"> <br><br>
+		<label>Nome:</label> <input type="text" name="nomeUsuario"> <br>
 
-	<input type="submit" value="Gravar" name="btnGravar">
+		<label>Perfil:</label> 
+		<select name="perfilUsuario">
+			<option value="">Escolha</option>
+			<option value="A">Administrador</option>
+			<option value="C">Colaborador</option>
+		</select> <br>
 
+		<label>Ativo</label> <input type="checkbox" name="usuarioAtivo"> <br><br>
 
-</form>
+		<input type="submit" value="Gravar" name="btnGravar">
 
+	</form>
+</section>
 </body>
 </html>

@@ -10,6 +10,18 @@
 		require('../layout/cabecalho.php');
 	?>
 		<section>
+			<a href="?cadastrar=1">Adicionar novo usuário</a>	<br>
+		
+			<?php
+				if(isset($msg))
+					echo "	<br> $msg <br>";
+				
+				if(isset($erro))
+					echo "	<br> $erro <br>";
+			?>
+			
+			<br>			
+
 			<table>
 				<tr>
 					<td>ID</td>
