@@ -6,14 +6,14 @@
 <body>
 
 <section>
-	<?php include('cabecalho.php') ?>
+	<?php include('../layout/cabecalho.php') ?>
 
 	<a href="index.php"> Voltar </a>
 
 	<form method="POST">
 		<label>Login:</label> <input type="text" name="loginUsuario"> <br>
 
-		<label>Senha:</label> <input type="password" name="senhaUsuario">
+		<label>Senha:</label> <input type="password" name="senhaUsuario"> <br>
 
 		<label>Nome:</label> <input type="text" name="nomeUsuario"> <br>
 

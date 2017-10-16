@@ -42,7 +42,7 @@
 							<td> {$dadosUsuario['nomeUsuario']} </td>
 							<td> {$dadosUsuario['tipoPerfil']} </td>
 							<td> {$dadosUsuario['usuarioAtivo']} </td>
-							<td> e </td>
+							<td><a href='?editar=$idUsuario'>e</a></td>
 							<td> x </td>
 						</tr>";
 					} 
