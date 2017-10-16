@@ -25,13 +25,13 @@
 
 			<table class="striped responsive-table">
 				<tr>
-					<td>ID</td>
-					<td>Login</td>
-					<td>Nome</td>
-					<td>Perfil</td>
-					<td>Ativo</td>
-					<td>Editar</td>
-					<td>Excluir</td>
+					<td><b>ID</b></td>
+					<td><b>Login</b></td>
+					<td><b>Nome</b></td>
+					<td><b>Perfil</b></td>
+					<td><b>Ativo</b></td>
+					<td><b>Editar</b></td>
+					<td><b>Excluir</b></td>
 				</tr>
 
 				<?php
