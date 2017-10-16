@@ -11,11 +11,23 @@
 	<a href="index.php"> Voltar </a>
 
 	<form method="POST">
-		<label>Nome:</label> <input type="text" name="nomeCategoria"> <br>
+		<label>Nome:</label> <input type="text" name="nomeProduto"> <br>
 
-		<label>Descrição:</label> <input type="text" name="descCategoria"> <br>
+		<label>Descrição:</label> <input type="text" name="descProduto"> <br>
 
-<!--PENDENTE Mudar para text area-->
+		<label>Preço:</label> <input type="number" name="precProduto"> <br>
+
+		<label>Desconto:</label> <input type="number" name="descontoPromocao"> <br>
+
+		<label>Categoria</label> <input type="number" name="idCategoria"> <br>
+
+		<label>Ativo:</label> <input type="checkbox" name="ativoProduto"> <br>
+
+		<label>Usuário:</label> <input type="checkbox" name="idUsuario"> <br>
+
+		<label>Qtd no Estoque:</label> <input type="number" name="qtdMinEstoque"> <br>
+
+<!--PENDENTE arrumar Categoria e inserir campo para imagem-->
 
 		<input type="submit" value="Gravar" name="btnGravar">
 

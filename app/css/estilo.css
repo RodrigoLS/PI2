@@ -79,3 +79,7 @@ label{
 img{
   padding: 5px;
 }
+
+table{
+  overflow: scroll;
+}

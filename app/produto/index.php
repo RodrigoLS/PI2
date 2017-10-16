@@ -8,34 +8,48 @@
 		if(	!empty($_POST['loginUsuario']) && !empty($_POST['nomeUsuario']) && !empty($_POST['senhaUsuario'])){
 			$_POST['usuarioAtivo'] = isset($_POST['usuarioAtivo']) ? true : false;
 		
-			$stmt = odbc_prepare($db, "	INSERT INTO Categoria
-											(nomeCategoria,
-											descCategoria)
+			$stmt = odbc_prepare($db, "	INSERT INTO Produto
+											(nomeProduto,
+											descProduto,
+											precProduto,
+											descontoPromocao,
+											idCategoria,
+											ativoProduto,
+											idUsuario,
+											qtdMinEstoque,
+											imagem)
 										VALUES
-											(?,?)");
+											(?,?,?,?,?,?,?,?)");
 
-			if(odbc_execute($stmt, array(	$_POST['nomeCategoria'],
-											$_POST['descCategoria'],))){
-				$msg = 'Categoria gravada com sucesso!';			
+			if(odbc_execute($stmt, array(	$_POST['nomeProduto'],
+											$_POST['descProduto'],
+											$_POST['precProduto'],
+											$_POST['descontoPromocao'],
+											$_POST['idCategoria'],
+											$_POST['ativoProduto'],
+											$_POST['idUsuario'],
+											$_POST['qtdMinEstoque'],
+											$_POST['imagem'],))){
+				$msg = 'Produto gravado com sucesso!';			
 			} else{
-				$erro = 'Erro ao gravar a categoria.';
+				$erro = 'Erro ao gravar o produto.';
 			}								
 							
 		} else{
 		
-			$erro = 'O campo: Nome é obrigatório.';
+			$erro = 'Os campos: Nome, preço, desconto, id categoria e quantidade mínima estoque são obrigatório.';
 		
 		}
 	}
 //FIM Funcionalidade Gravar Cadastro
 
 //Funcionalidade Listar
-$q = odbc_exec($db, 'SELECT idCategoria, nomeCategoria, descCategoria
-					 FROM Categoria');
+$q = odbc_exec($db, 'SELECT idProduto, nomeProduto,	descProduto, precProduto, descontoPromocao,	idCategoria, ativoProduto, idUsuario, qtdMinEstoque, imagem
+					 FROM Produto');
 
 while($r = odbc_fetch_array($q)){
 	
-	$categorias[$r['idCategoria']] = $r;
+	$produtos[$r['idProduto']] = $r;
 	
 }
 //FIM Funcionalidade Listar
@@ -47,11 +61,10 @@ if(isset($_GET['cadastrar'])){//FORM Cadastrar
 }elseif(isset($_GET['editar'])){//FORM Editar
 
 	if(is_numeric($_GET['editar'])){
-		$q = odbc_exec($db, "	SELECT 	idCategoria, nomeCategoria,
-										descCategoria
-								FROM Categoria 
-								WHERE idCategoria = {$_GET['editar']}");
-		$dados_categorias = odbc_fetch_array($q);
+		$q = odbc_exec($db, "	SELECT 	idProduto, nomeProduto,	descProduto, precProduto, descontoPromocao,	idCategoria, ativoProduto, idUsuario, qtdMinEstoque, imagem
+								FROM Produto 
+								WHERE idProduto = {$_GET['editar']}");
+		$dados_produtos = odbc_fetch_array($q);
 	}else{
 		$erro = 'Código inválido';
 	}
