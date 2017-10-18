@@ -10,7 +10,7 @@
 
 	<a href="index.php"> Voltar </a>
 
-	<form method="POST">
+	<form method="POST" enctype="multipart/form-data">
 		<label>Nome:</label> <input type="text" name="nomeProduto"> <br>
 
 		<label>Descrição:</label> <input type="text" name="descProduto"> <br>

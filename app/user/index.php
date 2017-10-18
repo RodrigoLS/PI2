@@ -6,8 +6,13 @@
 	if(isset($_POST['btnGravar'])){
 		unset($_GET['cadastrar']);
 		if(	!empty($_POST['loginUsuario']) && !empty($_POST['nomeUsuario']) && !empty($_POST['senhaUsuario'])){
-			$_POST['usuarioAtivo'] = isset($_POST['usuarioAtivo']) ? true : false;
+			$_POST['usuarioAtivo'] = isset($_POST['usuarioAtivo']) ? 1 : 0;
+			
+			$_POST['usuarioAtivo'] = (int) $_POST['usuarioAtivo'];
 		
+			$_POST['nomeUsuario'] = utf8_decode($_POST['nomeUsuario']);
+			$_POST['senhaUsuario'] = utf8_decode($_POST['senhaUsuario']);	
+
 			$stmt = odbc_prepare($db, "	INSERT INTO Usuario
 											(loginUsuario,
 											nomeUsuario,
@@ -37,11 +42,44 @@
 //Funcionalidade Editar Cadastro
 if(isset($_POST['btnAtualizar'])){
 		unset($_GET['editar']);
-		if(	!empty($_POST['loginUsuario']) && !empty($_POST['nomeUsuario']) && !empty($_POST['senhaUsuario'])){
-			$_POST['usuarioAtivo'] = isset($_POST['usuarioAtivo']) ? true : false;
+		if(	!empty($_POST['loginUsuario']) && !empty($_POST['nomeUsuario'])){
+			
+			
+			$_POST['usuarioAtivo'] = 
+			isset($_POST['usuarioAtivo']) ? 1 : 0;
 		
-			$stmt = odbc_prepare($db, "	UPDATE Usuario
-										SET
+			$_POST['usuarioAtivo'] = (int) $_POST['usuarioAtivo'];
+		
+			$_POST['nomeUsuario'] = utf8_decode($_POST['nomeUsuario']);
+			$_POST['senhaUsuario'] = utf8_decode($_POST['senhaUsuario']);
+
+		//Se não for informada nova senha, mantém a antiga
+		if(empty($_POST['senhaUsuario'])){
+			$stmt = odbc_prepare($db, "	UPDATE 
+											Usuario
+										SET 
+											loginUsuario = ?,
+											nomeUsuario = ?,
+											tipoPerfil = ?,
+											usuarioAtivo = ?
+										WHERE
+											idUsuario = ?");
+										
+			if(odbc_execute($stmt, array(	$_POST['loginUsuario'],
+											$_POST['nomeUsuario'],
+											$_POST['perfilUsuario'],
+											$_POST['usuarioAtivo'],
+											$_POST['idUsuario']))){
+				$msg = 'Usu&aacute;rio atualizado com sucesso!';			
+			}else{
+				$erro = 'Erro ao atualizar o usu&aacute;rio';
+			}
+		//Se for informada nova senha, altere	
+		}else{	
+		
+			$stmt = odbc_prepare($db, "	UPDATE 
+											Usuario
+										SET 
 											loginUsuario = ?,
 											nomeUsuario = ?,
 											senhaUsuario = ?,
@@ -49,7 +87,7 @@ if(isset($_POST['btnAtualizar'])){
 											usuarioAtivo = ?
 										WHERE
 											idUsuario = ?");
-
+										
 			if(odbc_execute($stmt, array(	$_POST['loginUsuario'],
 											$_POST['nomeUsuario'],
 											$_POST['senhaUsuario'],
@@ -60,7 +98,8 @@ if(isset($_POST['btnAtualizar'])){
 			} else{
 				$erro = 'Erro ao gravar o usuário';
 			}								
-							
+			
+			}				
 		} else{
 		
 			$erro = 'Erro ao atualizar o usuário';
