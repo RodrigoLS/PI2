@@ -12,9 +12,9 @@
 
 		<label>Descrição:</label> <input type="text" name="descProduto" value="<?php echo $dados_produtos['descProduto']; ?>"> <br>
 
-		<label>Preço:</label> <input type="number" name="precProduto"> <br>
+		<label>Preço:</label> <input type="number" name="precProduto" value="<?php echo $dados_produtos['precProduto']; ?>"> <br>
 
-		<label>Desconto:</label> <input type="number" name="descontoPromocao"> <br>
+		<label>Desconto:</label> <input type="number" name="descontoPromocao" value="<?php echo $dados_produtos['descontoPromocao']; ?>"> <br>
 
 		<label>Categoria</label> <input type="number" name="idCategoria"> <br>
 
@@ -22,7 +22,7 @@
 
 		<label>Usuário:</label> <input type="checkbox" name="idUsuario"> <br>
 
-		<label>Qtd no Estoque:</label> <input type="number" name="qtdMinEstoque"> <br>
+		<label>Qtd no Estoque:</label> <input type="number" name="qtdMinEstoque" value="<?php echo $dados_produtos['qtdMinEstoque']; ?>"> <br>
 
 <!--PENDENTE arrumar Categoria e inserir campo para imagem-->
 
