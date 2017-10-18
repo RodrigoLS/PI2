@@ -39,6 +39,7 @@
 					<td>Excluir</td>
 				</tr>
 				<?php
+					ini_set('odbc.defaultlrl', 9000000000);
 					foreach ($produtos as $idProduto => $dadosProduto) {
 						$utf_nomeProduto = $dadosProduto['nomeProduto'];
 						$utf_nomeProduto = utf8_encode($utf_nomeProduto);

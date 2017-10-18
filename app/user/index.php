@@ -34,7 +34,41 @@
 		}
 	}
 //FIM Funcionalidade Gravar Cadastro
+//Funcionalidade Editar Cadastro
+if(isset($_POST['btnAtualizar'])){
+		unset($_GET['editar']);
+		if(	!empty($_POST['loginUsuario']) && !empty($_POST['nomeUsuario']) && !empty($_POST['senhaUsuario'])){
+			$_POST['usuarioAtivo'] = isset($_POST['usuarioAtivo']) ? true : false;
+		
+			$stmt = odbc_prepare($db, "	UPDATE Usuario
+										SET
+											loginUsuario = ?,
+											nomeUsuario = ?,
+											senhaUsuario = ?,
+											tipoPerfil = ?,
+											usuarioAtivo = ?
+										WHERE
+											idUsuario = ?");
 
+			if(odbc_execute($stmt, array(	$_POST['loginUsuario'],
+											$_POST['nomeUsuario'],
+											$_POST['senhaUsuario'],
+											$_POST['perfilUsuario'],
+											$_POST['usuarioAtivo'],
+											$_POST['idUsuario']))){
+				$msg = 'Usuário atualizado com sucesso!';			
+			} else{
+				$erro = 'Erro ao gravar o usuário';
+			}								
+							
+		} else{
+		
+			$erro = 'Erro ao atualizar o usuário';
+		
+		}
+	}
+
+//FIM Funcionalidade Editar Cadastro
 //Funcionalidade Listar
 $q = odbc_exec($db, 'SELECT idUsuario, loginUsuario, nomeUsuario, tipoPerfil, usuarioAtivo
 					 FROM Usuario');
@@ -80,7 +114,8 @@ if(isset($_GET['cadastrar'])){//FORM Cadastrar
 									Usuario 
 								WHERE 
 									idUsuario = {$_GET['apagar']}")){	
-				$apagar_msg = 'Registro apagado com sucesso!';						
+				$apagar_msg = 'Registro apagado com sucesso!';	
+				header("location:index.php");					
 			}else{
 				$apagar_msg = 'Erro ao apagar o registro';
 			}	

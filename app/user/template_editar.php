@@ -21,6 +21,7 @@
 					</select><br><br>
 			<label> Ativo: </label> <input type="checkbox" name="usuarioAtivo" 
 					<?php if($dados_usuario['usuarioAtivo'] == 1) echo "checked"; ?>><br><br>
+			<input type="hidden" name="idUsuario" value="<?php echo $dados_usuario['idUsuario']; ?>">		
 			<input type="submit" value="Atualizar" name="btnAtualizar">
 		
 		</form>
