@@ -76,4 +76,22 @@ if(isset($_GET['cadastrar'])){//FORM Cadastrar
 	include('template.php');
 	
 }
+
+// consulta para apagar 
+	if(isset($_GET['apagar'])){
+		if(is_numeric($_GET['apagar'])){
+			
+			if(odbc_exec($db, "	DELETE 
+								FROM 
+									Produto 
+								WHERE 
+									idProduto = {$_GET['apagar']}")){	
+				$apagar_msg = 'Registro apagado com sucesso!';						
+			}else{
+				$apagar_msg = 'Erro ao apagar o registro';
+			}	
+		}	
+	}
+
+
 ?>

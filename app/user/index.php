@@ -71,7 +71,7 @@ if(isset($_GET['cadastrar'])){//FORM Cadastrar
 	
 }
 
-// consulta para apagar e verificando se é numerico o dado
+// consulta para apagar 
 	if(isset($_GET['apagar'])){
 		if(is_numeric($_GET['apagar'])){
 			

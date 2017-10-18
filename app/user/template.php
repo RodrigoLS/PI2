@@ -36,11 +36,13 @@
 
 				<?php
 					foreach ($usuarios as $idUsuario => $dadosUsuario) {
+						$utf_nomeUsuario = $dadosUsuario['nomeUsuario'];
+						$utf_nomeUsuario = utf8_encode($utf_nomeUsuario);
 						echo 
 						"<tr>
 							<td> $idUsuario </td>
 							<td> {$dadosUsuario['loginUsuario']} </td>
-							<td> {$dadosUsuario['nomeUsuario']} </td>
+							<td> $utf_nomeUsuario </td>
 							<td> {$dadosUsuario['tipoPerfil']} </td>
 							<td> {$dadosUsuario['usuarioAtivo']} </td>
 							<td><a href='?editar=$idUsuario'> <i class='small material-icons'>edit</i> </a></td>
