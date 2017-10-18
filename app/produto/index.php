@@ -29,7 +29,7 @@
 											$_POST['ativoProduto'],
 											$_POST['idUsuario'],
 											$_POST['qtdMinEstoque'],
-											$_POST['imagem'],))){
+											$_FILES['imagem'],))){
 				$msg = 'Produto gravado com sucesso!';			
 			} else{
 				$erro = 'Erro ao gravar o produto.';

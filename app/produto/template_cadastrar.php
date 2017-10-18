@@ -27,6 +27,8 @@
 
 		<label>Qtd no Estoque:</label> <input type="number" name="qtdMinEstoque"> <br>
 
+		<label>Imagem:</label> <input type="file" name="imagem"/> <br>
+
 <!--PENDENTE arrumar Categoria e inserir campo para imagem-->
 
 		<input type="submit" value="Gravar" name="btnGravar">
