@@ -5,15 +5,18 @@
 	//Funcionalidade Gravar Cadastro
 	if(isset($_POST['btnGravar'])){
 		unset($_GET['cadastrar']);
-		if(	!empty($_POST['nomeCategoria']) && !empty($_POST['descCategoria'])){		
+		if(	!empty($_POST['nomeCategoria']) && !empty($_POST['descCategoria'])){	
+			$nomeCategoria_ISO = $_POST['nomeCategoria'];
+			$descCategoria_ISO = $_POST['descCategoria'];
+
 			$stmt = odbc_prepare($db, "	INSERT INTO Categoria
 											(nomeCategoria,
 											descCategoria)
 										VALUES
 											(?,?)");
 
-			if(odbc_execute($stmt, array(	$_POST['nomeCategoria'],
-											$_POST['descCategoria'],))){
+			if(odbc_execute($stmt, array(	$nomeCategoria_ISO,
+											$descCategoria_ISO,))){
 				$msg = 'Categoria gravada com sucesso!';			
 			} else{
 				$erro = 'Erro ao gravar a categoria.';
