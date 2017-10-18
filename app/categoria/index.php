@@ -5,9 +5,7 @@
 	//Funcionalidade Gravar Cadastro
 	if(isset($_POST['btnGravar'])){
 		unset($_GET['cadastrar']);
-		if(	!empty($_POST['loginUsuario']) && !empty($_POST['nomeUsuario']) && !empty($_POST['senhaUsuario'])){
-			$_POST['usuarioAtivo'] = isset($_POST['usuarioAtivo']) ? true : false;
-		
+		if(	!empty($_POST['nomeCategoria']) && !empty($_POST['descCategoria'])){		
 			$stmt = odbc_prepare($db, "	INSERT INTO Categoria
 											(nomeCategoria,
 											descCategoria)

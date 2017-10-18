@@ -46,7 +46,7 @@
 						$utf_descProduto = utf8_encode($utf_descProduto);
 						$img_imagem_base64 = $dadosProduto['imagem'];
 						$img_imagem_base64 = base64_encode($img_imagem_base64);
-						$img_imagem_base64 = "<img src=\"data:image/jpeg;base64,".$img_imagem_base64."\">";
+						$img_imagem_base64 = "<img height='200px' weight='200px 'src=\"data:image/jpeg;base64,".$img_imagem_base64."\">";
 
 						//$arquivo = $dadosProduto['imagem'];
 						//$imagem = fopen($arquivo, "r");
