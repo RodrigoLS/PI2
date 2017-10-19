@@ -1,4 +1,3 @@
-<?php ini_set('odbc.defaultlrl', 9000000000); ?>
 <html>
 <head>
 	<meta charset="utf-8">

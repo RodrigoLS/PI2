@@ -1,4 +1,6 @@
 <?php
+	ini_set('odbc.defaultlrl', 900000000);
+
 	include('../db/bancodedados.php');
 	include('../auth/controle.php');
 
@@ -45,7 +47,7 @@
 
 //Funcionalidade Listar
 $q = odbc_exec($db, 'SELECT idProduto, nomeProduto,	descProduto, precProduto, descontoPromocao,	idCategoria, ativoProduto, idUsuario, qtdMinEstoque, imagem
-					 FROM Produto');
+					 FROM Produto ');
 
 while($r = odbc_fetch_array($q)){
 	
