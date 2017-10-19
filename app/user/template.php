@@ -23,7 +23,7 @@
 			<br>			
 
 			<table class="striped responsive-table">
-				<caption>Usuários Cadastrados</caption>
+				<caption><b>Usuários Cadastrados</b></caption>
 				<tr>
 					<td><b>ID</b></td>
 					<td><b>Login</b></td>

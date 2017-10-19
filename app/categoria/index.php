@@ -5,7 +5,7 @@
 	//Funcionalidade Gravar Cadastro
 	if(isset($_POST['btnGravar'])){
 		unset($_GET['cadastrar']);
-		if(	!empty($_POST['nomeCategoria']) && !empty($_POST['descCategoria'])){	
+		if(	!empty($_POST['nomeCategoria']) ){	
 			$nomeCategoria_ISO = $_POST['nomeCategoria'];
 			$descCategoria_ISO = $_POST['descCategoria'];
 
@@ -29,7 +29,38 @@
 		}
 	}
 //FIM Funcionalidade Gravar Cadastro
+//Funcionalidade Editar
 
+if(isset($_POST['btnAtualizar'])){
+		unset($_GET['editar']);
+		if(	!empty($_POST['nomeCategoria']) ){
+						
+			$_POST['nomeCategoria'] = utf8_decode($_POST['nomeCategoria']);
+			$_POST['descCategoria'] = utf8_decode($_POST['descCategoria']);
+
+			$stmt = odbc_prepare($db, "	UPDATE 
+											Categoria
+										SET 
+											nomeCategoria = ?,
+											descCategoria = ?
+										WHERE
+											idCategoria = ?");
+										
+			if(odbc_execute($stmt, array(	$_POST['nomeCategoria'],
+											$_POST['descCategoria'],
+											$_POST['idCategoria']))){
+				$msg = 'Categoria atualizada com sucesso!';			
+			}else{
+				$erro = 'Erro ao atualizar a categoria';
+			}
+} else{
+		
+			$erro = 'Erro ao atualizar a categoria';
+		
+		}
+	}
+
+//FIM Funcionalidade Editar Cadastro
 //Funcionalidade Listar
 $q = odbc_exec($db, 'SELECT idCategoria, nomeCategoria, descCategoria
 					 FROM Categoria');
@@ -74,7 +105,8 @@ if(isset($_GET['cadastrar'])){//FORM Cadastrar
 									Categoria 
 								WHERE 
 									idCategoria = {$_GET['apagar']}")){	
-				$apagar_msg = 'Registro apagado com sucesso!';						
+				$apagar_msg = 'Registro apagado com sucesso!';		
+				header("location:index.php");				
 			}else{
 				$apagar_msg = 'Erro ao apagar o registro';
 			}	

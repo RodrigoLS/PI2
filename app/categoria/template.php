@@ -11,7 +11,6 @@
 		require('../layout/cabecalho.php');
 	?>
 		<section>
-			<a href="?cadastrar=1">Adicionar nova categoria</a>	<br>
 		
 			<?php
 				if(isset($msg))
@@ -23,13 +22,14 @@
 			
 			<br>			
 
-			<table>
+			<table class="striped responsive-table">
+				<caption><b>Categorias Cadastradas</b></caption>
 				<tr>
-					<td>ID</td>
-					<td>Nome</td>
-					<td>Descrição</td>
-					<td>Editar</td>
-					<td>Excluir</td>
+					<td><b>ID</b></td>
+					<td><b>Nome</b></td>
+					<td><b>Descrição</b></td>
+					<td><b>Editar</b></td>
+					<td><b>Excluir</b></td>
 				</tr>
 
 				<?php
@@ -50,6 +50,7 @@
 
 				?>
 			</table>
+			<center> <a class="btn btn-floating btn-large light-blue darken-1 pulse" href="?cadastrar=1"><i class="material-icons">add</i></a> </center>
 		</section>
 	
 	<?php  
