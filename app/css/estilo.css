@@ -17,11 +17,13 @@ body{
   border-bottom: solid black 10px;
   position: absolute;
   top: 0px;
+  left: 0px;
 }
 
 .main{
   min-height: 400px;
   min-width: 400px;
+  max-width: 600px;
   display: -webkit-flex;
   display: flex;
   -webkit-align-items: center;
@@ -29,6 +31,7 @@ body{
   -webkit-justify-content: center;
   justify-content: center;
   border-radius: 20px;
+  padding: 20px;
   box-shadow: 5px 5px black;
 }
 
@@ -39,12 +42,16 @@ nav{
 section{
   align-items: left;
   justify-content: center;
+  height: 80%;
+  position: absolute;
+  top: 20%;
 }
 
 section.produto{
   height: 80%;
   overflow: auto;
 }
+
 
 section img#LogoMenu{
   width: 200px;
@@ -88,3 +95,4 @@ img{
 table{
   overflow: scroll;
 }
+

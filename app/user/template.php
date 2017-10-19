@@ -11,7 +11,6 @@
 		require('../layout/cabecalho.php');
 	?>
 		<section>
-			<a href="?cadastrar=1">Adicionar novo usuário</a>	<br>
 		
 			<?php
 				if(isset($msg))
@@ -24,6 +23,7 @@
 			<br>			
 
 			<table class="striped responsive-table">
+				<caption>Usuários Cadastrados</caption>
 				<tr>
 					<td><b>ID</b></td>
 					<td><b>Login</b></td>
@@ -52,6 +52,7 @@
 
 				?>
 			</table>
+			<center> <a class="btn btn-floating btn-large light-blue darken-1 pulse" href="?cadastrar=1"><i class="material-icons">add</i></a> </center>
 		</section>
 	
 	<?php  
