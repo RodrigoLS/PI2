@@ -40,11 +40,21 @@ nav{
 }
 
 section{
-  align-items: left;
-  justify-content: center;
   height: 80%;
+  width: 100%;
+}
+
+table{
+  width: 50%;
   position: absolute;
-  top: 20%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+caption{
+  padding-bottom: 20px;
+  text-transform: uppercase;
 }
 
 section.produto{
