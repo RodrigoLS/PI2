@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	  <link rel="stylesheet" type="text/css" href="../css/estilo.css">
 	<title></title>
 </head>
 <body>
 
+	<?php include('../layout/cabecalhoVoltar.php') ?>
+
 <section>
-	<?php include('../layout/cabecalho.php') ?>
-
-	<a href="index.php"> Voltar </a>
-
+	<div class="main grey lighten-3 center-align">
 	<form method="POST">
 		<label>Nome:</label> <input type="text" name="nomeCategoria"> <br>
 
 		<label>Descrição:</label> <input type="text" name="descCategoria"> <br>
 
-<!--PENDENTE Mudar para text area-->
-
-		<input type="submit" value="Gravar" name="btnGravar">
+		<input type="submit" value="Gravar" name="btnGravar" class="waves-effect waves-light btn-large">
 
 	</form>
+</div>
 </section>
-</body>
+	<?php  
+		require('../layout/rodape.php');
+	?>
+     
+      <script>
+       	  $(document).ready(function() {
+    	  $('select').material_select();
+          });
+      </script>				
+	</body>
 </html>
