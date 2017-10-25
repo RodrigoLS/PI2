@@ -38,6 +38,7 @@
 						$utf_nomeCategoria = utf8_encode($utf_nomeCategoria);
 						$utf_descCategoria = $dadosCategoria['descCategoria'];
 						$utf_descCategoria = utf8_encode($utf_descCategoria);
+						$utf_descCategoria = utf8_decode($utf_descCategoria);
 						echo 
 						"<tr>
 							<td> $idCategoria </td>
