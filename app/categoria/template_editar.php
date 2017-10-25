@@ -15,6 +15,7 @@
 		
 			<label> Nome: </label> <input type="text" name="nomeCategoria" value="<?php echo $dados_categorias['nomeCategoria']; ?>"><br><br>
 			<label> Descrição: </label> <input type="text" name="descCategoria" value="<?php echo $dados_categorias['descCategoria']; ?>" ><br><br>
+			<input type="hidden" name="idCategoria" value="<?php echo $dados_categorias['idCategoria']; ?>">
 			<input type="submit" value="Atualizar" name="btnAtualizar" class="waves-effect waves-light btn-large">
 		
 		</form>
