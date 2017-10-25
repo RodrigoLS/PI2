@@ -12,11 +12,6 @@
 	?>
 		<section>
 		
-			<form method="GET">
-				<input type="text" name="consulta" placeholder="Insira sua consulta">
-				<input type="submit" name="buscar" id="buscar">
-			</form> <br><br>
-
 			<?php
 				if(isset($msg))
 					echo "	<br> $msg <br>";
@@ -28,30 +23,29 @@
 			<br>			
 
 			<table class="striped responsive-table">
-				<caption><b>Usuários Cadastrados</b></caption>
+				<caption><b>Categorias Cadastradas</b></caption>
 				<tr>
 					<td><b>ID</b></td>
-					<td><b>Login</b></td>
 					<td><b>Nome</b></td>
-					<td><b>Perfil</b></td>
-					<td><b>Ativo</b></td>
+					<td><b>Descrição</b></td>
 					<td><b>Editar</b></td>
 					<td><b>Excluir</b></td>
 				</tr>
 
 				<?php
-					foreach ($usuarios as $idUsuario => $dadosUsuario) {
-						$utf_nomeUsuario = $dadosUsuario['nomeUsuario'];
-						$utf_nomeUsuario = utf8_encode($utf_nomeUsuario);
+					foreach ($categorias as $idCategoria => $dadosCategoria) {
+						$utf_nomeCategoria = $dadosCategoria['nomeCategoria'];
+						$utf_nomeCategoria = utf8_encode($utf_nomeCategoria);
+						$utf_descCategoria = $dadosCategoria['descCategoria'];
+						$utf_descCategoria = utf8_encode($utf_descCategoria);
+						$utf_descCategoria = utf8_decode($utf_descCategoria);
 						echo 
 						"<tr>
-							<td> $idUsuario </td>
-							<td> {$dadosUsuario['loginUsuario']} </td>
-							<td> $utf_nomeUsuario </td>
-							<td> {$dadosUsuario['tipoPerfil']} </td>
-							<td> {$dadosUsuario['usuarioAtivo']} </td>
-							<td><a href='?editar=$idUsuario'> <i class='small material-icons'>edit</i> </a></td>
-							<td><a href='?apagar=$idUsuario'> <i class='small material-icons'>delete</i></a></td>
+							<td> $idCategoria </td>
+							<td> $utf_nomeCategoria </td>
+							<td> $utf_descCategoria </td>
+							<td><a href='?editar=$idCategoria'> <i class='small material-icons'>edit</i> </a></td>
+							<td><a href='?apagar=$idCategoria'> <i class='small material-icons'>delete</i></a></td>
 						</tr>";
 					} 
 
