@@ -12,6 +12,11 @@
 	?>
 		<section>
 		
+			<!-- <form method="GET">
+				<input type="text" name="consulta" placeholder="Insira sua consulta">
+				<input type="submit" name="buscar" id="buscar">
+			</form> <br><br> -->
+		
 			<?php
 				if(isset($msg))
 					echo "	<br> $msg <br>";

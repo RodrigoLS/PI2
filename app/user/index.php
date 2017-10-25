@@ -110,7 +110,7 @@ if(isset($_POST['btnAtualizar'])){
 //FIM Funcionalidade Editar Cadastro
 //Funcionalidade Listar
 
-if (isset($_GET['consulta'])) {
+/* if (isset($_GET['consulta'])) {
 		$pesquisar = $_GET['consulta'];
 		
 		$q = odbc_exec($db, "SELECT idUsuario, loginUsuario, nomeUsuario, tipoPerfil, usuarioAtivo
@@ -122,7 +122,7 @@ if (isset($_GET['consulta'])) {
 		}
 
 		unset($_GET['consulta']);
-} else {
+} else { */
 
 	$q = odbc_exec($db, 'SELECT idUsuario, loginUsuario, nomeUsuario, tipoPerfil, usuarioAtivo
 					 FROM Usuario');
@@ -131,7 +131,7 @@ if (isset($_GET['consulta'])) {
 	
 		$usuarios[$r['idUsuario']] = $r;
 	}
-}
+//}
 
 //FIM Funcionalidade Listar
 

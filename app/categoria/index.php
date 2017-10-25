@@ -62,14 +62,31 @@ if(isset($_POST['btnAtualizar'])){
 
 //FIM Funcionalidade Editar Cadastro
 //Funcionalidade Listar
-$q = odbc_exec($db, 'SELECT idCategoria, nomeCategoria, descCategoria
+
+/* if (isset($_GET['consulta'])) {
+	$pesquisar = $_GET['consulta'];
+
+	$q = odbc_exec($db, "SELECT idCategoria, nomeCategoria, descCategoria
+					 	 FROM Categoria
+					 	 WHERE nomeCategoria = '$pesquisa' ");
+
+	while($r = odbc_fetch_array($q)){
+	
+		$categorias[$r['idCategoria']] = $r;
+	}
+
+		unset($_GET['consulta']);
+} else { */
+
+	$q = odbc_exec($db, 'SELECT idCategoria, nomeCategoria, descCategoria
 					 FROM Categoria');
 
-while($r = odbc_fetch_array($q)){
+	while($r = odbc_fetch_array($q)){
 	
-	$categorias[$r['idCategoria']] = $r;
-	
-}
+		$categorias[$r['idCategoria']] = $r;
+	}
+//}
+
 //FIM Funcionalidade Listar
 
 if(isset($_GET['cadastrar'])){//FORM Cadastrar
