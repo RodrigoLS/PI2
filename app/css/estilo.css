@@ -10,9 +10,8 @@ body{
   	justify-content: center;
 }
 
-#cabecalho{
+header{
   width: 100%;
-  height: 10%;
   background-color: #BD0100;
   border-bottom: solid black 10px;
   position: absolute;
@@ -34,7 +33,7 @@ body{
 }
 
 nav{
-  background-color: rgba(0, 0, 0, 0);
+  background-color: #BD0100;
 }
 
 section{
@@ -44,8 +43,8 @@ section{
 
 table{
   width: 50%;
-  position: absolute;
-  top: 50%;
+  position: relative;
+  top: 45%;
   left: 50%;
   transform: translate(-50%,-50%);
 }
@@ -75,7 +74,7 @@ section img#LogoMenu{
   margin-top: -280px;
 }
 
-#rodape{
+footer{
   width: 100%;
   height: 10%;
   background-color: black;
@@ -84,9 +83,6 @@ section img#LogoMenu{
   left: 0px;
   text-align: center;
   color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 label{

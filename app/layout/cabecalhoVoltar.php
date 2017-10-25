@@ -1,4 +1,4 @@
-<div id="cabecalho"> 
+<header>
 	<nav>
 		<div class="nav-wrapper">
 			<ul  class="left">
@@ -10,4 +10,4 @@
 			</ul>
 		</div>
 	</nav>
-</div>
+</header>

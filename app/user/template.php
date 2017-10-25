@@ -7,9 +7,18 @@
 	<link rel="stylesheet" type="text/css" href="../css/estilo.css">
 </head>
 <body>
-	<?php  
-		require('../layout/cabecalho.php');
-	?>
+	<header>
+		<nav>
+			<div class="nav-wrapper">
+				<ul  class="left">
+					<li><a href="../user">Usuario</a></li>
+					<li><a href="../categoria">Categoria</a></li>
+					<li><a href="../produto">Produto</a></li>
+					<li><a href="sair.php">Sair</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
 		<section>
 		
 			<!-- <form method="GET">
@@ -60,8 +69,14 @@
 			<center> <a class="btn btn-floating btn-large light-blue darken-1 pulse" href="?cadastrar=1"><i class="material-icons">add</i></a> </center>
 		</section>
 	
-	<?php  
-		require('../layout/rodape.php');
-	?>
+	<footer>
+		<p>Copyright © 2017</p>
+	</footer>
+
+      <script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 </body>
 </html>		
