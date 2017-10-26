@@ -12,11 +12,6 @@
 	?>
 		<section>
 		
-			<!-- <form method="GET">
-				<input type="text" name="consulta" placeholder="Insira sua consulta">
-				<input type="submit" name="buscar" id="buscar">
-			</form> <br><br> -->
-		
 			<?php
 				if(isset($msg))
 					echo "	<br> $msg <br>";
@@ -29,13 +24,14 @@
 
 			<table class="striped responsive-table">
 				<caption><b>Categorias Cadastradas</b></caption>
-				<thead>
+				<tr>
 					<td><b>ID</b></td>
 					<td><b>Nome</b></td>
 					<td><b>Descrição</b></td>
 					<td><b>Editar</b></td>
 					<td><b>Excluir</b></td>
-				</thead>
+				</tr>
+
 				<?php
 					foreach ($categorias as $idCategoria => $dadosCategoria) {
 						$utf_nomeCategoria = $dadosCategoria['nomeCategoria'];
@@ -54,10 +50,8 @@
 					} 
 
 				?>
-				<tfoot>
-					<td><a class="btn btn-floating btn-large light-blue darken-1 pulse" href="?cadastrar=1"><i class="material-icons">add</i></a></td>
-				</tfoot>
-      </table>
+			</table>
+			<center> <a class="btn btn-floating btn-large light-blue darken-1 pulse" href="?cadastrar=1"><i class="material-icons">add</i></a> </center>
 		</section>
 	
 	<?php  

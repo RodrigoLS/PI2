@@ -12,7 +12,6 @@
 		
 		<section>
 			 <?php  
-			 	session_start();
 			 	echo "<p> Olá, " . $_SESSION['nomeUsuario'] . ".</p>";
 			 	echo "<p> O sistema ainda está em desenvolvimento. </p>";
 			 	echo "<p> Desde já, pedimos desculpas pelo transtorno.</p>";

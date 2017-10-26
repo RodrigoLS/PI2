@@ -47,7 +47,7 @@
 					<td><b>Editar</b></td>
 					<td><b>Excluir</b></td>
 				</thead>
-
+        
 				<?php
 					foreach ($usuarios as $idUsuario => $dadosUsuario) {
 						$utf_nomeUsuario = $dadosUsuario['nomeUsuario'];
