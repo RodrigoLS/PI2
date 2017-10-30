@@ -10,19 +10,20 @@
 	<?php include('../layout/cabecalhoVoltar.php'); 
 		  include('../db/bancodedados.php');
 		  session_start()
+		  
 		  ?>
 <section>
 	<div class="main grey lighten-3 center-align">
 	<form method="POST" enctype="multipart/form-data" class="formProduto">
 		<fieldset>
 		<legend><b>EDIÇÃO PRODUTO</b></legend>
-		<label>Nome:</label> <input type="text" name="nomeProduto" value=" <?php echo $utf_nomeProduto ?>"> <br>
+		<label>Nome:</label> <input type="text" name="nomeProduto" value=" <?php echo $dados_produtos['nomeProduto']; ?>"> <br>
 
-		<label>Descrição:</label> <input type="text" name="descProduto" value=" <?php echo $dadosProduto['descProduto']; ?>"> <br>
+		<label>Descrição:</label> <input type="text" name="descProduto" value=" <?php echo $dados_produtos['descProduto']; ?>"> <br>
 
-		<label>Preço:</label> <input type="number" name="precProduto" value="<?php echo $dadosProduto['precProduto']; ?>"> <br>
+		<label>Preço:</label> <input type="number" name="precProduto" value="<?php echo $dados_produtos['precProduto']; ?>"> <br>
 
-		<label>Desconto:</label> <input type="number" name="descontoPromocao" value="<?php echo $dadosProduto['descontoPromocao']; ?>"> <br>
+		<label>Desconto:</label> <input type="number" name="descontoPromocao" value="<?php echo $dados_produtos['descontoPromocao']; ?>"> <br>
 
 		<label>Categoria:</label> 
 		<select name="idCategoria">
