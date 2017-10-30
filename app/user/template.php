@@ -7,18 +7,9 @@
 	<link rel="stylesheet" type="text/css" href="../css/estilo.css">
 </head>
 <body>
-	<header>
-		<nav>
-			<div class="nav-wrapper">
-				<ul  class="left">
-					<li><a href="../user">Usuario</a></li>
-					<li><a href="../categoria">Categoria</a></li>
-					<li><a href="../produto">Produto</a></li>
-					<li><a href="sair.php">Sair</a></li>
-				</ul>
-			</div>
-		</nav>
-	</header>
+	<?php  
+		require('../layout/cabecalho.php');
+	?>
 		<section>
 		
 			<!-- <form method="GET">
@@ -29,7 +20,7 @@
 			<?php
 				if(isset($msg))
 					echo "	<br> $msg <br>";
-				
+		
 				if(isset($erro))
 					echo "	<br> $erro <br>";
 			?>
@@ -38,7 +29,7 @@
 
 			<table class="striped responsive-table">
 				<caption><b>Usuários Cadastrados</b></caption>
-				<tr>
+				<thead>
 					<td><b>ID</b></td>
 					<td><b>Login</b></td>
 					<td><b>Nome</b></td>
@@ -46,7 +37,7 @@
 					<td><b>Ativo</b></td>
 					<td><b>Editar</b></td>
 					<td><b>Excluir</b></td>
-				</tr>
+				</thead>
 
 				<?php
 					foreach ($usuarios as $idUsuario => $dadosUsuario) {
@@ -65,8 +56,10 @@
 					} 
 
 				?>
-			</table>
-			<center> <a class="btn btn-floating btn-large light-blue darken-1 pulse" href="?cadastrar=1"><i class="material-icons">add</i></a> </center>
+				<tfoot>
+					<td><a class="btn btn-floating btn-large light-blue darken-1 pulse" href="?cadastrar=1"><i class="material-icons">add</i></a></td>
+				</tfoot>
+			</table>	
 		</section>
 	
 	<footer>

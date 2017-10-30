@@ -22,44 +22,41 @@
 			?>
 			
 			<br>			
-
-			<table>
-				<tr>
-					<td>ID</td>
-					<td>Nome</td>
-					<td>Descrição</td>
-					<td>Preço</td>
-					<td>Desconto</td>
-					<td>Categoria</td>
-					<td>Ativo</td>
-					<td>Usuário</td>
-					<td>Qtd no Estoque</td>
-					<td>Imagem</td>
-					<td>Editar</td>
-					<td>Excluir</td>
-				</tr>
+			<table class="tableProdutos striped responsive-table">
+				<thead>
+					<td><b>ID</b></td>
+					<td><b>Nome</b></td>
+					<td><b>Descrição</b></td>
+					<td><b>Preço(R$)</b></td>
+					<td><b>Desconto(%)</b></td>
+					<td><b>Categoria</b></td>
+					<td><b>Ativo</b></td>
+					<td><b>Usuário</b></td>
+					<td><b>Qtd no Estoque</b></td>
+					<td><b>Imagem</b></td>
+					<td><b>Editar</b></td>
+					<td><b>Excluir</b>	</td>
+				</thead>
 				<?php
 					foreach ($produtos as $idProduto => $dadosProduto) {
 						$utf_nomeProduto = $dadosProduto['nomeProduto'];
 						$utf_nomeProduto = utf8_encode($utf_nomeProduto);
 						$utf_descProduto = $dadosProduto['descProduto'];
 						$utf_descProduto = utf8_encode($utf_descProduto);
+						$mod_dadosProduto = $dadosProduto['precProduto'];
+						$mod_dadosProduto = number_format($mod_dadosProduto,2);
+						$mod_descontoProduto = $dadosProduto['descontoPromocao'];
+						$mod_descontoProduto = number_format($mod_descontoProduto,0);
 						$img_imagem_base64 = $dadosProduto['imagem'];
 						$img_imagem_base64 = base64_encode($img_imagem_base64);
 						$img_imagem_base64 = "<img height='200px' weight='200px 'src=\"data:image/jpeg;base64,".$img_imagem_base64."\">";
-
-						//$arquivo = $dadosProduto['imagem'];
-						//$imagem = fopen($arquivo, "r");
-						//$conteudo = fread($imagem, filesize($arquivo));
-						//$img_imagem_base64 = base64_encode($conteudo);
-						//$img_imagem_base64 = "<img src=\"data:image/jpeg;base64,".$img_imagem_base64."\">"; 
 						echo 
 						"<tr>
 							<td> $idProduto </td>
 							<td> $utf_nomeProduto </td>
 							<td> $utf_descProduto </td>
-							<td> {$dadosProduto['precProduto']} </td>
-							<td> {$dadosProduto['descontoPromocao']} </td>
+							<td> $mod_dadosProduto </td>
+							<td> $mod_descontoProduto </td>
 							<td> {$dadosProduto['idCategoria']} </td>
 							<td> {$dadosProduto['ativoProduto']} </td>
 							<td> {$dadosProduto['idUsuario']} </td>
@@ -69,7 +66,6 @@
 							<td><a href='?apagar=$idProduto'> <i class='small material-icons'>delete</i></a></td>
 						</tr>";
 					} 
-// necessário adicionar e tratar <td> {$dadosProduto['imagem']} </td>
 				?>
 			</table>
 		</section>

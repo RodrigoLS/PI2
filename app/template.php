@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" href="css/estilo.css">
 </head>
 <body>
-	<div id="cabecalho"> </div>
+	<header class="headerLogon"> </header>
 	<div class="main grey lighten-3 center-align">		
 			<form  method="post">
 			  <img class="circle" src="img/LogoHippo.jpg" alt="Logo Loja" width="120px" height="120px"><br>	
@@ -26,8 +26,8 @@
 			?>
 			</form> 
 	</div>
-	<div id="rodape">
+	<footer>
 		<p>Copyright © 2017</p>
-	</div>
+	</<footer></footer>>
 </body>
 </html>

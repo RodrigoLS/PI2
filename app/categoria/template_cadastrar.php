@@ -12,12 +12,14 @@
 <section>
 	<div class="main grey lighten-3 center-align">
 	<form method="POST">
+		<fieldset>
+		<legend><b>NOVA CATEGORIA</b></legend>
 		<label>Nome:</label> <input type="text" name="nomeCategoria"> <br>
 
 		<label>Descrição:</label> <input type="text" name="descCategoria"> <br>
 
 		<input type="submit" value="Gravar" name="btnGravar" class="waves-effect waves-light btn-large">
-
+		</fieldset>
 	</form>
 </div>
 </section>

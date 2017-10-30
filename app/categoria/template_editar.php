@@ -12,12 +12,13 @@
 <section>
 	<div class="main grey lighten-3 center-align">
 		<form method="post">
-		
+			<fieldset>
+			<legend><b>EDIÇÃO CATEGORIA</b></legend>
 			<label> Nome: </label> <input type="text" name="nomeCategoria" value="<?php echo $dados_categorias['nomeCategoria']; ?>"><br><br>
 			<label> Descrição: </label> <input type="text" name="descCategoria" value="<?php echo $dados_categorias['descCategoria']; ?>" ><br><br>
 			<input type="hidden" name="idCategoria" value="<?php echo $dados_categorias['idCategoria']; ?>">
 			<input type="submit" value="Atualizar" name="btnAtualizar" class="waves-effect waves-light btn-large">
-		
+			</fieldset>
 		</form>
 	</div>
 </section>
