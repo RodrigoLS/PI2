@@ -7,18 +7,9 @@
 	<link rel="stylesheet" type="text/css" href="../css/estilo.css">
 </head>
 <body>
-	<header>
-		<nav>
-			<div class="nav-wrapper">
-				<ul  class="left">
-					<li><a href="../user">Usuario</a></li>
-					<li><a href="../categoria">Categoria</a></li>
-					<li><a href="../produto">Produto</a></li>
-					<li><a href="sair.php">Sair</a></li>
-				</ul>
-			</div>
-		</nav>
-	</header>
+	<?php  
+		require('../layout/cabecalho.php');
+	?>
 		<section>
 		
 			<!-- <form method="GET">
@@ -29,7 +20,7 @@
 			<?php
 				if(isset($msg))
 					echo "	<br> $msg <br>";
-				
+		
 				if(isset($erro))
 					echo "	<br> $erro <br>";
 			?>
@@ -47,7 +38,7 @@
 					<td><b>Editar</b></td>
 					<td><b>Excluir</b></td>
 				</thead>
-        
+
 				<?php
 					foreach ($usuarios as $idUsuario => $dadosUsuario) {
 						$utf_nomeUsuario = $dadosUsuario['nomeUsuario'];

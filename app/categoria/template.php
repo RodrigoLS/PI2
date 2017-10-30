@@ -36,13 +36,13 @@
 					<td><b>Editar</b></td>
 					<td><b>Excluir</b></td>
 				</thead>
+        
 				<?php
 					foreach ($categorias as $idCategoria => $dadosCategoria) {
 						$utf_nomeCategoria = $dadosCategoria['nomeCategoria'];
 						$utf_nomeCategoria = utf8_encode($utf_nomeCategoria);
 						$utf_descCategoria = $dadosCategoria['descCategoria'];
 						$utf_descCategoria = utf8_encode($utf_descCategoria);
-						$utf_descCategoria = utf8_decode($utf_descCategoria);
 						echo 
 						"<tr>
 							<td> $idCategoria </td>
@@ -57,7 +57,9 @@
 				<tfoot>
 					<td><a class="btn btn-floating btn-large light-blue darken-1 pulse" href="?cadastrar=1"><i class="material-icons">add</i></a></td>
 				</tfoot>
+
       </table>
+
 		</section>
 	
 	<?php  

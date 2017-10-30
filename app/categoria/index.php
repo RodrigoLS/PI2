@@ -9,6 +9,9 @@
 			$nomeCategoria_ISO = $_POST['nomeCategoria'];
 			$descCategoria_ISO = $_POST['descCategoria'];
 
+			$nomeCategoria_ISO = utf8_decode($nomeCategoria_ISO);
+			$descCategoria_ISO = utf8_decode($descCategoria_ISO);
+
 			$stmt = odbc_prepare($db, "	INSERT INTO Categoria
 											(nomeCategoria,
 											descCategoria)
