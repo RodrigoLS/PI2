@@ -11,6 +11,12 @@
 		require('../layout/cabecalho.php');
 	?>
 		<section class="produto">
+
+			<form method="GET">
+				<input type="text" name="consulta" placeholder="Insira sua consulta">
+				<input type="submit" name="buscar" id="buscar">
+			</form> <br><br>
+
 			<a href="?cadastrar=1">Adicionar novo produto</a>	<br>
 		
 			<?php

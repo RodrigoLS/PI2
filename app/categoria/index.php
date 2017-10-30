@@ -66,21 +66,20 @@ if(isset($_POST['btnAtualizar'])){
 //FIM Funcionalidade Editar Cadastro
 //Funcionalidade Listar
 
-/* if (isset($_GET['consulta'])) {
+	
+if (isset($_GET['consulta'])) {
 	$pesquisar = $_GET['consulta'];
 
 	$q = odbc_exec($db, "SELECT idCategoria, nomeCategoria, descCategoria
 					 	 FROM Categoria
-					 	 WHERE nomeCategoria = '$pesquisa' ");
+					 	 WHERE nomeCategoria = '$pesquisar' ");
 
 	while($r = odbc_fetch_array($q)){
 	
 		$categorias[$r['idCategoria']] = $r;
 	}
 
-		unset($_GET['consulta']);
-} else { */
-
+} else {
 	$q = odbc_exec($db, 'SELECT idCategoria, nomeCategoria, descCategoria
 					 FROM Categoria');
 
@@ -88,7 +87,8 @@ if(isset($_POST['btnAtualizar'])){
 	
 		$categorias[$r['idCategoria']] = $r;
 	}
-//}
+}
+
 
 //FIM Funcionalidade Listar
 

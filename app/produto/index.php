@@ -100,14 +100,32 @@ if(isset($_POST['btnAtualizar'])){
 
 //FIM Funcionalidade Editar Cadastro
 //Funcionalidade Listar
-$q = odbc_exec($db, 'SELECT idProduto, nomeProduto,	descProduto, precProduto, descontoPromocao,	idCategoria, ativoProduto, idUsuario, qtdMinEstoque, imagem
+
+if (isset($_GET['consulta'])) {
+	
+	$pesquisar = $_GET['consulta'];
+
+	$q = odbc_exec($db, "SELECT idProduto, nomeProduto,	descProduto, precProduto, descontoPromocao,	idCategoria, ativoProduto, idUsuario, qtdMinEstoque, imagem
+					 	 FROM Produto
+					 	 WHERE nomeProduto = '$pesquisar' OR descProduto = '$pesquisar' ");
+
+	while($r = odbc_fetch_array($q)){
+	
+		$produtos[$r['idProduto']] = $r;
+	}
+	
+} else {
+
+	$q = odbc_exec($db, 'SELECT idProduto, nomeProduto,	descProduto, precProduto, descontoPromocao,	idCategoria, ativoProduto, idUsuario, qtdMinEstoque, imagem
 					 FROM Produto ');
 
-while($r = odbc_fetch_array($q)){
+	while($r = odbc_fetch_array($q)){
 	
-	$produtos[$r['idProduto']] = $r;
-	
+		$produtos[$r['idProduto']] = $r;
+
+	}
 }
+
 //FIM Funcionalidade Listar
 
 if(isset($_GET['cadastrar'])){//FORM Cadastrar
