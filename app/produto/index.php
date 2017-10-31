@@ -13,6 +13,10 @@
 			$_POST['descProduto'] = utf8_decode($_POST['descProduto']);
 			$_POST['ativoProduto'] = (int) $_POST['ativoProduto']; 
 			$_POST['idUsuario'] = intval($_POST['idUsuario']);
+			$arquivo = $_FILES['imagem']['tmp_name'];
+			$imagem = fopen($arquivo, "r");
+			$conteudo = fread($imagem, filesize($arquivo));
+
 			
 			$stmt = odbc_prepare($db, "	INSERT INTO Produto
 											(nomeProduto,
@@ -35,7 +39,7 @@
 											$_POST['ativoProduto'],
 											$_POST['idUsuario'],
 											$_POST['qtdMinEstoque'],
-											$_FILES['imagem'],))){
+											$conteudo,))){
 				$msg = 'Produto gravado com sucesso!';			
 			} else{
 				$erro = 'Erro ao gravar o produto.';
