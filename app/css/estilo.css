@@ -48,7 +48,7 @@ section{
 table{
   width: 50%;
   position: relative;
-  top: 45%;
+  top: 25%;
   left: 50%;
   transform: translate(-50%,-50%);
 }

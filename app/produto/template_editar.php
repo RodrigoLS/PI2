@@ -27,7 +27,6 @@
 
 		<label>Categoria:</label> 
 		<select name="idCategoria">
-			<option value="">Escolha</option>
 			<?php
 
 				$c = odbc_exec($db, 'SELECT idCategoria, nomeCategoria
@@ -41,15 +40,19 @@
 				foreach ($categorias as $idCategoria => $dadosCategoria) {
 					$utf_nomeCategoria = $dadosCategoria['nomeCategoria'];
 					$utf_nomeCategoria = utf8_encode($utf_nomeCategoria);
-					echo "
-					<option value='$idCategoria'>$utf_nomeCategoria</option> 
-					";
+						if ($idCategoria == $dados_produtos['idCategoria']) {
+							echo "<option value='$idCategoria' 'selected'> $utf_nomeCategoria </option>";	
+						}
+						else {
+							echo "<option value='$idCategoria'>$utf_nomeCategoria</option> ";
+						}
 				}
 			?>
 
 		</select><br>
 
-		<input type="checkbox" id="ativo1" name="ativoProduto"> 
+		<input type="checkbox" id="ativo1" name="ativoProduto" 
+			<?php if($dados_produtos['ativoProduto'] == 1) echo "checked"; ?>>
 		<label for="ativo1">Status Ativo</label> <br> <br>
 
 		<input type="hidden" name="<?php $_SESSION['idUsuario']?>"> 
@@ -66,9 +69,8 @@
 	      </div>
 	    </div>
 		<br>
-<!--PENDENTE arrumar Categoria e inserir campo para imagem-->
 
-		<input type="submit" value="Gravar" name="btnGravar" class="waves-effect waves-light btn-large">
+		<input type="submit" value="Atualizar" name="btnAtualizar" class="waves-effect waves-light btn-large">
 		</fieldset>
 	</form>
 	</div>

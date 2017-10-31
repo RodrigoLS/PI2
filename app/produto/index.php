@@ -139,6 +139,11 @@ if(isset($_GET['cadastrar'])){//FORM Cadastrar
 								FROM Produto 
 								WHERE idProduto = {$_GET['editar']}");
 		$dados_produtos = odbc_fetch_array($q);
+		$dados_produtos['nomeProduto'] = utf8_encode($dados_produtos['nomeProduto']);
+		$dados_produtos['descProduto'] = utf8_encode($dados_produtos['descProduto']);
+		$dados_produtos['precProduto'] = number_format($dados_produtos['precProduto'],2);
+		$dados_produtos['descontoPromocao'] = number_format($dados_produtos['descontoPromocao'],0);
+
 	}else{
 		$erro = 'Código inválido';
 	}
