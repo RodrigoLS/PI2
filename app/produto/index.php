@@ -39,7 +39,7 @@
 											$_POST['ativoProduto'],
 											$_POST['idUsuario'],
 											$_POST['qtdMinEstoque'],
-											$conteudo,))){
+											$conteudo))){
 				$msg = 'Produto gravado com sucesso!';			
 			} else{
 				$erro = 'Erro ao gravar o produto.';
@@ -68,18 +68,17 @@ if(isset($_POST['btnAtualizar'])){
 			$arquivo = $_FILES['imagem']['tmp_name'];
 			$imagem = fopen($arquivo, "r");
 			$conteudo = fread($imagem, filesize($arquivo));
-
 			$stmt = odbc_prepare($db, "	UPDATE 
 											Produto
 										SET 
-											nomeProduto, = ?,
-											descProduto, = ?,
-											precProduto, = ?,
-											descontoPromocao, = ?,
-											idCategoria, = ?,
-											ativoProduto, = ?,
-											idUsuario, = ?, 
-											qtdMinEstoque, = ?,
+											nomeProduto = ?,
+											descProduto = ?,
+											precProduto = ?,
+											descontoPromocao = ?,
+											idCategoria = ?,
+											ativoProduto = ?,
+											idUsuario = ?, 
+											qtdMinEstoque = ?,
 											imagem = ?
 										WHERE
 											idProduto = ?");
@@ -92,7 +91,8 @@ if(isset($_POST['btnAtualizar'])){
 											$_POST['ativoProduto'],
 											$_POST['idUsuario'],
 											$_POST['qtdMinEstoque'],
-											$conteudo,))){
+											$conteudo,
+											$_POST['idProduto']))){
 				$msg = 'Produto atualizado com sucesso!';			
 			}else{
 				$erro = 'Erro ao atualizar o produto';

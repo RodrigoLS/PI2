@@ -74,6 +74,7 @@
 					} 
 				?>
 			</table>
+			
 		</section>
 	
 	<?php  

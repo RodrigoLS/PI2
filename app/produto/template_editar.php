@@ -41,7 +41,7 @@
 				foreach ($categorias as $idCategoria => $dadosCategoria) {
 					$utf_nomeCategoria = $dadosCategoria['nomeCategoria'];
 						if ($idCategoria == $dados_produtos['idCategoria']) {
-							echo "<option value='$idCategoria' 'selected'> $utf_nomeCategoria </option>";	
+							echo "<option value='$idCategoria' selected> $utf_nomeCategoria </option>";	
 						}
 						else {
 							echo "<option value='$idCategoria'>$utf_nomeCategoria</option> ";
@@ -70,6 +70,7 @@
 	    </div>
 		<br>
 
+		<input type="hidden" name="idProduto" value="<?php echo $_GET['editar']; ?>">
 		<input type="submit" value="Atualizar" name="btnAtualizar" class="waves-effect waves-light btn-large">
 		</fieldset>
 	</form>
