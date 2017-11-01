@@ -1,20 +1,36 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>ADO PHP</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Usuario |HIPPO|</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="../css/estilo.css">
 </head>
 <body>
-	<?php  
-		require('../layout/cabecalho.php');
-	?>
+<header>
+	<div class="corpo-header">
+		<nav>
+			<div class="nav-wrapper">
+				<ul  class="left">
+					<li class="active_menu" ><a href="../user">Usuario</a></li>
+					<li><a href="../categoria">Categoria</a></li>
+					<li><a href="../produto">Produto</a></li>
+				</ul>
+				<img src="../img/LogoHippo.jpg" alt="Logo Loja" class="brand-logo center" id="LogoMenu">
+				<ul class="right">
+					<li><?php echo "<p> Olá <b>".$_SESSION['nomeUsuario']."</b></p>" ?></li>
+					<li><a href="sair.php"><i class="large material-icons">exit_to_app</i></a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+</header>
 		<section>
 		
-			<form method="GET">
-				<input type="text" name="consulta" placeholder="Insira sua consulta">
-				<input type="submit" name="buscar" id="buscar">
+			<form class="busca" method="GET">
+				<input class="input-busca" type="text" name="consulta" placeholder="Insira sua consulta">
+				<button class="button-busca btn btn-floating btn-large light-blue darken-1" type="submit" name="buscar" id="buscar"><i class="material-icons">search</i></button>
 			</form> <br><br>
 
 			<?php
@@ -79,7 +95,7 @@
 								<li class="waves-effect">
 									<?php 
 									if($i == $pagina){ ?>
-									<a class="active" href="index.php?pagina=<?php echo $i; ?>"><?php echo $i; ?></a>
+									<a class="active_aba" href="index.php?pagina=<?php echo $i; ?>"><?php echo $i; ?></a>
 									<?php
 									}else{ ?> 
 									<a href="index.php?pagina=<?php echo $i; ?>"><?php echo $i; ?></a>	

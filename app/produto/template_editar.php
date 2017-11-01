@@ -9,7 +9,8 @@
 
 	<?php include('../layout/cabecalhoVoltar.php'); 
 		  include('../db/bancodedados.php');
-		  session_start()
+		  session_start();
+		  $id_user = $_SESSION["idUsuario"];
 		  
 		  ?>
 <section>
@@ -55,9 +56,9 @@
 			<?php if($dados_produtos['ativoProduto'] == 1) echo "checked"; ?>>
 		<label for="ativo1">Status Ativo</label> <br> <br>
 
-		<input type="hidden" name="<?php $_SESSION['idUsuario']?>"> 
+		<input type="hidden" name="idUsuario" value="<?php echo"$id_user"?>"> 
 
-		<label>Qtd Min. no Estoque:</label> <input type="number" name="qtdMinEstoque"> <br>
+		<label>Qtd Min. no Estoque:</label> <input type="number" name="qtdMinEstoque" value="<?php echo $dados_produtos['qtdMinEstoque'];?>"> <br>
 
 	    <div class="file-field input-field">
 	      <div class="btn light-blue darken-1">

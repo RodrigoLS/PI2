@@ -1,20 +1,36 @@
+/*MODIFCAÇÕES GERAIS*/
+      body{
+        background-color: white;
+        height: 100%;
+        display: -webkit-flex;
+          display: flex;
+          -webkit-align-items: center;
+          align-items: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+      }
+      label{
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+        color: #BD0100;;
+        text-shadow: 1px 1px black;
+      }
+/*=====*/
 
-body{
-  background-color: white;
-  height: 100%;
-	display: -webkit-flex;
-  	display: flex;
-  	-webkit-align-items: center;
-  	align-items: center;
-  	-webkit-justify-content: center;
-  	justify-content: center;
-}
 /*TELA LOGIN*/
       /*Região Superior - Página Logon*/
       .headerLogon{
         height: 74px;
       }
-
+      /*Estilo IMG página LOGIN*/
+      #imgLogin{
+        width: 120px;
+        height: 120px;
+        border-color: black;
+        border: solid;
+        border-width: 2px;
+        border-radius: 50%;
+      }
       /*Modificação letra User e Pass na tela Login*/
       .input-field label{
         color: #BD0100;
@@ -30,153 +46,168 @@ body{
 /*=====*/
 
 /*Região Superior - Páginas em Geral*/ 
-header{
-  width: 100%;
-  background-color: #BD0100;
-  border-bottom: solid black 10px;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-}
-nav{
-  background-color: #BD0100;
-}
-header .corpo-header{
-  width: 50%;
-  margin: 0 auto;
-}
-#LogoMenu{
-  height:60px;
-  width:60px;
-  border-radius: 50%; 
-  border: solid 2px black;
-}
-header nav ul li p{
-  margin: 0 20px !important;
-}
-header nav ul.right{
-  background-color: black;
-}
-ul.right li a:hover{
-  background: white;
-  color: black;
-}
+        header{
+          width: 100%;
+          background-color: #BD0100;
+          border-bottom: solid black 10px;
+          position: absolute;
+          top: 0px;
+          left: 0px;
+        }
+        nav{
+          background-color: #BD0100;
+        }
+        .active_menu{
+          background-color: black!important;
+          color: white!important;
+        }
+        header .corpo-header{
+          width: 50%;
+          margin: 0 auto;
+        }
+        #LogoMenu{
+          height:60px;
+          width:60px;
+          border-radius: 50%; 
+          border: solid 2px black;
+        }
+        header nav ul li p{
+          margin: 0 20px !important;
+        }
+        header nav ul.right{
+          background-color: black;
+        }
+        ul.right li a:hover{
+          background: white;
+          color: black;
+        }
 /*=====*/
+
+/*Região Central - Páginas em Geral*/
+        section{
+          height: 80%;
+          width: 100%;
+        }
+        .active_aba{
+          background-color: #039be5!important; 
+          color: white!important;
+        }
+        .busca{
+          width: 50%;
+          margin: 5px auto 0 auto;
+        }
+        .input-busca{
+          display: inline-block!important;
+          width: 90%!important;
+        }
+        .button-busca{
+          display: inline-block!important;         
+        }
+        /*Título das Tabelas*/
+        caption{
+          padding-bottom: 20px;
+          text-transform: uppercase;
+        }
+        table{
+          width: 50%;
+          position: relative;
+          top: 25%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+        }
+        table{
+          overflow: scroll;
+        }
+
+        table tr td{
+          padding: 5;
+          max-height: 40px;
+        }
+        table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+        .nav-abas{
+          text-align: right;
+          align-content: right;
+        }
+/*=====*/
+
+/*Região Central - Páginas de edição e cadastro*/
+        .main{
+          min-height: 200px;
+          min-width: 400px;
+          max-width: 600px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+          border-radius: 20px;
+          padding: 20px;
+          box-shadow: 5px 5px black;
+        }
+/*=====*/
+
+/*Região Inferior - Páginas em Geral*/
+        footer{
+          width: 100%;
+          height: 74px;
+          background-color: #BD0100;
+          position: absolute;
+          bottom: 0px;
+          left: 0px;
+          text-align: center;
+          color: white;
+          display: table;
+          border-top: solid black 10px;
+        }
+        footer p{
+          display: table-cell;
+          vertical-align: middle;
+          font-weight: bold;
+        }
+/*=====*/
+
 /*Página Apresentação*/
-section img#LogoMenu{
-  max-width: 50%;
-  max-height: 50%;
-  height: auto;
-  width: auto;
-  border-color: black;
-  border: solid;
-  border-width: 3px;
-  border-radius: 50%;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%,-50%);
-}
+        section img#LogoMenu{
+          max-width: 50%;
+          max-height: 50%;
+          height: auto;
+          width: auto;
+          border-color: black;
+          border: solid;
+          border-width: 3px;
+          border-radius: 50%;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%,-50%);
+        }
 /*=====*/
 
 
-.main{
-  min-height: 200px;
-  min-width: 400px;
-  max-width: 600px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 5px 5px black;
-}
-
-
-section{
-  height: 80%;
-  width: 100%;
-}
-
-table{
-  width: 50%;
-  position: relative;
-  top: 25%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
-
-table.tableProdutos{
-  width: 100%;
-  top: 0%;
-  left: 0%;
-  transform: translate(0%,0%);
-}
-
-/*Título das Tabelas*/
-caption{
-  padding-bottom: 20px;
-  text-transform: uppercase;
-}
-
-section.produto{
-  height: 80%;
-  overflow: auto;
-}
+/*Ajustes específicos da página de produtos*/
+          table.tableProdutos{
+            width: 100%;
+            top: 0%;
+            left: 0%;
+            transform: translate(0%,0%);
+          }
+          form.formProduto input{
+            height: 25px !important;
+            margin-bottom: 5px !important;
+          }
+          section.produto{
+            height: 80%;
+            overflow: auto;
+          }
+/*=====*/
 
 
 
-footer{
-  width: 100%;
-  height: 10%;
-  background-color: black;
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  text-align: center;
-  color: white;
-  display: table;
-}
 
-footer p{
-  display: table-cell;
-  vertical-align: middle;
-  font-weight: bold;
-}
 
-label{
-  font-family: 'Roboto', sans-serif;
-  font-size: 15px;
-  color: #BD0100;;
-  text-shadow: 1px 1px black;
-}
 
-/*Estilo IMG página LOGIN*/
-#imgLogin{
-  width: 120px;
-  height: 120px;
-  border-color: black;
-  border: solid;
-  border-width: 2px;
-  border-radius: 50%;
-}
 
-table{
-  overflow: scroll;
-}
 
-table tr td{
-  padding: 5;
-  max-height: 40px;
-}
 
-form.formProduto input{
-  height: 25px !important;
-  margin-bottom: 5px !important;
-}
-
-.nav-abas{
-  text-align: right;
-  align-content: right;
-}

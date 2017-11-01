@@ -61,10 +61,13 @@ if(isset($_POST['btnAtualizar'])){
 			$_POST['ativoProduto'] = 
 			isset($_POST['ativoProduto']) ? 1 : 0;
 		
-			$_POST['ativoProduto'] = (int) $_POST['ativoProduto'];		
 			$_POST['nomeProduto'] = utf8_decode($_POST['nomeProduto']);
 			$_POST['descProduto'] = utf8_decode($_POST['descProduto']);
-			$_FILES['imagem'] = base64_decode($_FILES['imagem']);
+			$_POST['ativoProduto'] = (int) $_POST['ativoProduto'];	
+			$_POST['idUsuario'] = intval($_POST['idUsuario']);				
+			$arquivo = $_FILES['imagem']['tmp_name'];
+			$imagem = fopen($arquivo, "r");
+			$conteudo = fread($imagem, filesize($arquivo));
 
 			$stmt = odbc_prepare($db, "	UPDATE 
 											Produto
@@ -75,7 +78,7 @@ if(isset($_POST['btnAtualizar'])){
 											descontoPromocao, = ?,
 											idCategoria, = ?,
 											ativoProduto, = ?,
-											idUsuario, = ?,
+											idUsuario, = ?, 
 											qtdMinEstoque, = ?,
 											imagem = ?
 										WHERE
@@ -89,7 +92,7 @@ if(isset($_POST['btnAtualizar'])){
 											$_POST['ativoProduto'],
 											$_POST['idUsuario'],
 											$_POST['qtdMinEstoque'],
-											$_FILES['imagem'],))){
+											$conteudo,))){
 				$msg = 'Produto atualizado com sucesso!';			
 			}else{
 				$erro = 'Erro ao atualizar o produto';

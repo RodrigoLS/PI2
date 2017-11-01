@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Edição Usuario |HIPPO|</title>
 	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 	  <link rel="stylesheet" type="text/css" href="../css/estilo.css">
 	<title></title>
@@ -10,7 +13,7 @@
 	<?php include('../layout/cabecalhoVoltar.php') ?>
 
 <section>
-	<div class="main grey lighten-3 center-align">
+	<div class="main grey lighten-4 center-align">
 		<form method="post">
 			<fieldset>
 			<legend><b>EDIÇÃO USUÁRIO</b></legend>
