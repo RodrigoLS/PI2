@@ -123,13 +123,30 @@ if (isset($_GET['consulta'])) {
 
 		unset($_GET['consulta']);
 } else {
+//Verificar se está sendo passado na URL a página atual, senao é atribuido a pagina 
+		$pagina = (isset($_GET['pagina']))? $_GET['pagina'] : 1;
+//Definição da página anterior e posterior
+		$pagina_anterior = $pagina - 1;
+		$pagina_posterior = $pagina + 1;
+//Seleciona todos os itens da tabela
+		$q = odbc_exec($db, "SELECT * FROM Usuario");
 
-	$q = odbc_exec($db, 'SELECT idUsuario, loginUsuario, nomeUsuario, tipoPerfil, usuarioAtivo
-					 FROM Usuario');
-
-	while($r = odbc_fetch_array($q)){
+//Conta o total de entradas da tabela
+		$total_usuario = odbc_num_rows($q);
+//Seta a quantidade de entradas por aba
+		$quantidade_pg = 5;
+//Calcula o número de abas necessárias
+		$num_aba = ceil($total_usuario/$quantidade_pg);
+//Calcula o inicio da vizualização
+		$inicio = (($quantidade_pg*$pagina) - $quantidade_pg)+1;
+//Selecionar as linhas a serem apresentadas na aba
+		$result_user = "SELECT idUsuario, loginUsuario, nomeUsuario, tipoPerfil, usuarioAtivo FROM Usuario ORDER BY idUsuario OFFSET $inicio ROWS FETCH NEXT $quantidade_pg ROWS ONLY" ;
+		$resultado_user = odbc_exec($db,$result_user);
 	
-		$usuarios[$r['idUsuario']] = $r;
+		while($r = odbc_fetch_array($resultado_user)){
+	
+			$usuarios[$r['idUsuario']] = $r;
+
 	}
 }
 

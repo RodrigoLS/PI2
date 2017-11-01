@@ -58,8 +58,52 @@
 				?>
 				<tfoot>
 					<td><a class="btn btn-floating btn-large light-blue darken-1 pulse" href="?cadastrar=1"><i class="material-icons">add</i></a></td>
+					<td colspan="6">
+					<div class="nav-abas">	
+						<ul class="pagination">
+								<?php
+								if($pagina_anterior > 0){ ?>
+							<li>
+									<a href="index.php?pagina=<?php echo $pagina_anterior; ?>">
+										<i class="material-icons">chevron_left</i>
+									</a>
+							</li>
+								<?php }else{ ?>
+							<li class="disabled">
+										<i class="material-icons">chevron_left</i>
+							<?php }  ?>
+							</li>
+							<?php 
+							//Apresentar a paginacao
+							for($i = 1; $i < $num_aba + 1; $i++){ ?>
+								<li class="waves-effect">
+									<?php 
+									if($i == $pagina){ ?>
+									<a class="active" href="index.php?pagina=<?php echo $i; ?>"><?php echo $i; ?></a>
+									<?php
+									}else{ ?> 
+									<a href="index.php?pagina=<?php echo $i; ?>"><?php echo $i; ?></a>	
+									<?php } ?>
+								</li>
+							<?php } ?>
+								<?php
+								if($pagina_posterior <= $num_aba){ ?>
+							<li class="waves-effect">
+									<a href="index.php?pagina=<?php echo $pagina_posterior; ?>" aria-label="Previous">
+										<i class="material-icons">chevron_right</i></a></li>
+									</a>
+							</li>
+								<?php }else{ ?>
+							<li class="disabled">
+										<i class="material-icons">chevron_right</i></a></li>
+							<?php }  ?>
+							</li>
+						</ul>
+					</div>						
+					</td>
+				</tfoot>					
 				</tfoot>
-			</table>	
+			</table>			
 		</section>
 	
 	<footer>

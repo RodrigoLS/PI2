@@ -45,6 +45,39 @@ header .corpo-header{
   width: 50%;
   margin: 0 auto;
 }
+#LogoMenu{
+  height:60px;
+  width:60px;
+  border-radius: 50%; 
+  border: solid 2px black;
+}
+header nav ul li p{
+  margin: 0 20px !important;
+}
+header nav ul.right{
+  background-color: black;
+}
+ul.right li a:hover{
+  background: white;
+  color: black;
+}
+/*=====*/
+/*Página Apresentação*/
+section img#LogoMenu{
+  max-width: 50%;
+  max-height: 50%;
+  height: auto;
+  width: auto;
+  border-color: black;
+  border: solid;
+  border-width: 3px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+/*=====*/
 
 
 .main{
@@ -81,6 +114,7 @@ table.tableProdutos{
   transform: translate(0%,0%);
 }
 
+/*Título das Tabelas*/
 caption{
   padding-bottom: 20px;
   text-transform: uppercase;
@@ -92,19 +126,6 @@ section.produto{
 }
 
 
-section img#LogoMenu{
-  width: 200px;
-  height: 200px;
-  border-color: black;
-  border: solid;
-  border-width: 3px;
-  border-radius: 50%;
-  position: absolute;
-  left: 100%;
-  top: 100%;
-  margin-left: -210px;
-  margin-top: -280px;
-}
 
 footer{
   width: 100%;
@@ -153,4 +174,9 @@ table tr td{
 form.formProduto input{
   height: 25px !important;
   margin-bottom: 5px !important;
+}
+
+.nav-abas{
+  text-align: right;
+  align-content: right;
 }
