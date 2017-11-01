@@ -106,6 +106,26 @@ if(isset($_POST['btnAtualizar'])){
 
 
 //FIM Funcionalidade Editar Cadastro
+
+// consulta para apagar 
+	if(isset($_GET['apagar'])){
+		if(is_numeric($_GET['apagar'])){
+			
+			if(odbc_exec($db, "	DELETE 
+								FROM 
+									Produto 
+								WHERE 
+									idProduto = {$_GET['apagar']}")){	
+				
+				$msg = 'Registro apagado com sucesso!';
+							
+			}else{
+				$erro = 'Erro ao apagar o registro';
+			}	
+		}	
+	}
+
+
 //Funcionalidade Listar
 
 if (isset($_GET['consulta'])) {
@@ -167,22 +187,6 @@ if(isset($_GET['cadastrar'])){//FORM Cadastrar
 	
 }
 
-// consulta para apagar 
-	if(isset($_GET['apagar'])){
-		if(is_numeric($_GET['apagar'])){
-			
-			if(odbc_exec($db, "	DELETE 
-								FROM 
-									Produto 
-								WHERE 
-									idProduto = {$_GET['apagar']}")){	
-				$apagar_msg = 'Registro apagado com sucesso!';
-				header("location:index.php");							
-			}else{
-				$apagar_msg = 'Erro ao apagar o registro';
-			}	
-		}	
-	}
 
 
 ?>
