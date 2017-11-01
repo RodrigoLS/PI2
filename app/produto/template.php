@@ -46,9 +46,9 @@
 				<?php
 					foreach ($produtos as $idProduto => $dadosProduto) {
 						$utf_nomeProduto = $dadosProduto['nomeProduto'];
-						$utf_nomeProduto = utf8_encode($utf_nomeProduto);
+						
 						$utf_descProduto = $dadosProduto['descProduto'];
-						$utf_descProduto = utf8_encode($utf_descProduto);
+						
 						$mod_dadosProduto = $dadosProduto['precProduto'];
 						$mod_dadosProduto = number_format($mod_dadosProduto,2);
 						$mod_descontoProduto = $dadosProduto['descontoPromocao'];

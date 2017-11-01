@@ -34,13 +34,13 @@
 						 FROM Categoria');
 
 				while($cat = odbc_fetch_array($c)){
+					$cat['nomeCategoria'] = utf8_encode($cat['nomeCategoria']);
 		
 				$categorias[$cat['idCategoria']] = $cat;
 				}
 
 				foreach ($categorias as $idCategoria => $dadosCategoria) {
 					$utf_nomeCategoria = $dadosCategoria['nomeCategoria'];
-					$utf_nomeCategoria = utf8_encode($utf_nomeCategoria);
 					echo "
 					<option value='$idCategoria'>$utf_nomeCategoria</option> 
 					";

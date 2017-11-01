@@ -117,6 +117,8 @@ if (isset($_GET['consulta'])) {
 					 	 WHERE nomeProduto LIKE '%$pesquisar%' OR descProduto LIKE '%$pesquisar%' ");
 
 	while($r = odbc_fetch_array($q)){
+		$r['nomeProduto'] = utf8_encode($r['nomeProduto']);
+		$r['descProduto'] = utf8_encode($r['descProduto']);
 	
 		$produtos[$r['idProduto']] = $r;
 	}
@@ -127,6 +129,8 @@ if (isset($_GET['consulta'])) {
 					 FROM Produto ');
 
 	while($r = odbc_fetch_array($q)){
+		$r['nomeProduto'] = utf8_encode($r['nomeProduto']);
+		$r['descProduto'] = utf8_encode($r['descProduto']);
 	
 		$produtos[$r['idProduto']] = $r;
 
