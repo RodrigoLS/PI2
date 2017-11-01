@@ -115,7 +115,7 @@ if (isset($_GET['consulta'])) {
 		
 		$q = odbc_exec($db, "SELECT idUsuario, loginUsuario, nomeUsuario, tipoPerfil, usuarioAtivo
 							 FROM Usuario 
-							 WHERE loginUsuario = '$pesquisar' OR nomeUsuario = '$pesquisar' ");
+							 WHERE loginUsuario LIKE '%$pesquisar%' OR nomeUsuario LIKE '%$pesquisar%' ");
 
 		while($r = odbc_fetch_array($q)) {
 			$usuarios[$r['idUsuario']] = $r;

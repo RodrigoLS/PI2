@@ -72,7 +72,7 @@ if (isset($_GET['consulta'])) {
 
 	$q = odbc_exec($db, "SELECT idCategoria, nomeCategoria, descCategoria
 					 	 FROM Categoria
-					 	 WHERE nomeCategoria = '$pesquisar' ");
+					 	 WHERE nomeCategoria LIKE '%$pesquisar%' OR descCategoria LIKE '%$pesquisar%' ");
 
 	while($r = odbc_fetch_array($q)){
 	
