@@ -91,7 +91,7 @@
 							</li>
 							<?php 
 							//Apresentar a paginacao
-							for($i = 1; $i < $num_aba + 1; $i++){ ?>
+							for($i = 1; $i < $num_aba+1; $i++){ ?>
 								<li class="waves-effect">
 									<?php 
 									if($i == $pagina){ ?>
@@ -123,7 +123,7 @@
 		</section>
 	
 	<footer>
-		<p>Copyright © 2017</p>
+		<p>Copyright © 2017 <?php echo "$num_aba ceil($total_usuario/$quantidade_pg)" ?></p>
 	</footer>
 
       <script

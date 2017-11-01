@@ -155,7 +155,7 @@ if (isset($_GET['consulta'])) {
 //Calcula o número de abas necessárias
 		$num_aba = ceil($total_usuario/$quantidade_pg);
 //Calcula o inicio da vizualização
-		$inicio = (($quantidade_pg*$pagina) - $quantidade_pg)+1;
+		$inicio = (($quantidade_pg*$pagina) - $quantidade_pg);
 //Selecionar as linhas a serem apresentadas na aba
 		$result_user = "SELECT idUsuario, loginUsuario, nomeUsuario, tipoPerfil, usuarioAtivo FROM Usuario ORDER BY idUsuario OFFSET $inicio ROWS FETCH NEXT $quantidade_pg ROWS ONLY" ;
 		$resultado_user = odbc_exec($db,$result_user);
