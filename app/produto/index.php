@@ -111,7 +111,7 @@ if (isset($_GET['consulta'])) {
 
 	$q = odbc_exec($db, "SELECT idProduto, nomeProduto,	descProduto, precProduto, descontoPromocao,	idCategoria, ativoProduto, idUsuario, qtdMinEstoque, imagem
 					 	 FROM Produto
-					 	 WHERE nomeProduto = '$pesquisar' OR descProduto = '$pesquisar' ");
+					 	 WHERE nomeProduto LIKE '%$pesquisar%' OR descProduto LIKE '%$pesquisar%' ");
 
 	while($r = odbc_fetch_array($q)){
 	
