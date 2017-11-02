@@ -33,7 +33,6 @@
 	}
 //FIM Funcionalidade Gravar Cadastro
 //Funcionalidade Editar
-
 if(isset($_POST['btnAtualizar'])){
 		unset($_GET['editar']);
 		if(	!empty($_POST['nomeCategoria']) ){
@@ -97,11 +96,29 @@ if (isset($_GET['consulta'])) {
 		$categorias[$r['idCategoria']] = $r;
 	}
 
+	unset($_GET['consulta']);
 } else {
-	$q = odbc_exec($db, 'SELECT idCategoria, nomeCategoria, descCategoria
-					 FROM Categoria');
+//Verificar se está sendo passado na URL a página atual, senao é atribuido a pagina 
+		$pagina = (isset($_GET['pagina']))? $_GET['pagina'] : 1;
+//Definição da página anterior e posterior
+		$pagina_anterior = $pagina - 1;
+		$pagina_posterior = $pagina + 1;
+//Seleciona todos os itens da tabela
+		$q = odbc_exec($db, "SELECT * FROM Categoria");
 
-	while($r = odbc_fetch_array($q)){
+//Conta o total de entradas da tabela
+		$total_categoria = odbc_num_rows($q);
+//Seta a quantidade de entradas por aba
+		$quantidade_pg = 5;
+//Calcula o número de abas necessárias
+		$num_aba = ceil($total_categoria/$quantidade_pg);
+//Calcula o inicio da vizualização
+		$inicio = (($quantidade_pg*$pagina) - $quantidade_pg);
+//Selecionar as linhas a serem apresentadas na aba
+	$result_categoria = "SELECT idCategoria, nomeCategoria, descCategoria FROM Categoria ORDER BY idCategoria OFFSET $inicio ROWS FETCH NEXT $quantidade_pg ROWS ONLY" ;
+	$resultado_categoria = odbc_exec($db,$result_categoria);
+
+	while($r = odbc_fetch_array($resultado_categoria)){
 	
 		$categorias[$r['idCategoria']] = $r;
 	}

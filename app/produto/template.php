@@ -7,9 +7,24 @@
 	<link rel="stylesheet" type="text/css" href="../css/estilo.css">
 </head>
 <body>
-	<?php  
-		require('../layout/cabecalho.php');
-	?>
+<header>
+	<div class="corpo-header">
+		<nav>
+			<div class="nav-wrapper">
+				<ul  class="left">
+					<li><a href="../user">Usuario</a></li>
+					<li><a href="../categoria">Categoria</a></li>
+					<li class="active_menu" ><a>Produto</a></li>
+				</ul>
+				<img src="../img/LogoHippo.jpg" alt="Logo Loja" class="brand-logo center" id="LogoMenu">
+				<ul class="right">
+					<li><?php echo "<p> Olá <b>".$_SESSION['nomeUsuario']."</b></p>" ?></li>
+					<li><a href="sair.php"><i class="large material-icons">exit_to_app</i></a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+</header>
 		<section class="produto">
 
 			<form method="GET">
@@ -73,6 +88,52 @@
 						</tr>";
 					} 
 				?>
+				<tfoot>
+					<td><a class="btn btn-floating btn-large light-blue darken-1 pulse" href="?cadastrar=1"><i class="material-icons">add</i></a></td>
+					<td colspan="11">
+					<div class="nav-abas">	
+						<ul class="pagination">
+								<?php
+								if($pagina_anterior > 0){ ?>
+							<li>
+									<a href="index.php?pagina=<?php echo $pagina_anterior; ?>">
+										<i class="material-icons">chevron_left</i>
+									</a>
+							</li>
+								<?php }else{ ?>
+							<li class="disabled">
+										<i class="material-icons">chevron_left</i>
+							<?php }  ?>
+							</li>
+							<?php 
+							//Apresentar a paginacao
+							for($i = 1; $i < $num_aba+1; $i++){ ?>
+								<li class="waves-effect">
+									<?php 
+									if($i == $pagina){ ?>
+									<a class="active_aba" href="index.php?pagina=<?php echo $i; ?>"><?php echo $i; ?></a>
+									<?php
+									}else{ ?> 
+									<a href="index.php?pagina=<?php echo $i; ?>"><?php echo $i; ?></a>	
+									<?php } ?>
+								</li>
+							<?php } ?>
+								<?php
+								if($pagina_posterior <= $num_aba){ ?>
+							<li class="waves-effect">
+									<a href="index.php?pagina=<?php echo $pagina_posterior; ?>" aria-label="Previous">
+										<i class="material-icons">chevron_right</i></a></li>
+									</a>
+							</li>
+								<?php }else{ ?>
+							<li class="disabled">
+										<i class="material-icons">chevron_right</i></a></li>
+							<?php }  ?>
+							</li>
+						</ul>
+					</div>						
+					</td>				
+				</tfoot>				
 			</table>
 			
 		</section>

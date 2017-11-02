@@ -13,7 +13,7 @@
 		<nav>
 			<div class="nav-wrapper">
 				<ul  class="left">
-					<li class="active_menu" ><a href="../user">Usuario</a></li>
+					<li class="active_menu" ><a>Usuario</a></li>
 					<li><a href="../categoria">Categoria</a></li>
 					<li><a href="../produto">Produto</a></li>
 				</ul>
@@ -116,14 +116,13 @@
 							</li>
 						</ul>
 					</div>						
-					</td>
-				</tfoot>					
+					</td>				
 				</tfoot>
 			</table>			
 		</section>
 	
 	<footer>
-		<p>Copyright © 2017 <?php echo "$num_aba ceil($total_usuario/$quantidade_pg)" ?></p>
+		<p>Copyright © 2017</p>
 	</footer>
 
       <script
