@@ -68,7 +68,39 @@ if(isset($_POST['btnAtualizar'])){
 			$arquivo = $_FILES['imagem']['tmp_name'];
 			$imagem = fopen($arquivo, "r");
 			$conteudo = fread($imagem, filesize($arquivo));
-			$stmt = odbc_prepare($db, "	UPDATE 
+			
+			// Se não for inserida nova imagem, manter a antiga:
+
+			if(empty($conteudo)) {
+				$stmt = odbc_prepare($db, "	UPDATE 
+											Produto
+										SET 
+											nomeProduto = ?,
+											descProduto = ?,
+											precProduto = ?,
+											descontoPromocao = ?,
+											idCategoria = ?,
+											ativoProduto = ?,
+											idUsuario = ?, 
+											qtdMinEstoque = ?
+										WHERE
+											idProduto = ?");
+										
+			if(odbc_execute($stmt, array(	$_POST['nomeProduto'],
+											$_POST['descProduto'],
+											$_POST['precProduto'],
+											$_POST['descontoPromocao'],
+											$_POST['idCategoria'],
+											$_POST['ativoProduto'],
+											$_POST['idUsuario'],
+											$_POST['qtdMinEstoque'],
+											$_POST['idProduto']))){
+				$msg = 'Produto atualizado com sucesso!';			
+			}else{
+				$erro = 'Erro ao atualizar o produto';
+			}
+			} else {
+				$stmt = odbc_prepare($db, "	UPDATE 
 											Produto
 										SET 
 											nomeProduto = ?,
@@ -97,12 +129,14 @@ if(isset($_POST['btnAtualizar'])){
 			}else{
 				$erro = 'Erro ao atualizar o produto';
 			}
-} else{
+			}
+
+		} else{
 		
 			$erro = 'Erro ao atualizar o produto';
 		
 		}
-	}
+}
 
 
 //FIM Funcionalidade Editar Cadastro
