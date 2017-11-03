@@ -182,6 +182,7 @@ if(isset($_GET['cadastrar'])){//FORM Cadastrar
 								FROM Usuario 
 								WHERE idUsuario = {$_GET['editar']}");
 		$dados_usuario = odbc_fetch_array($q);
+		$dados_usuario['nomeUsuario'] = utf8_encode($dados_usuario['nomeUsuario']);
 	}else{
 		$erro = 'Código inválido';
 	}
