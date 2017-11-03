@@ -5,7 +5,7 @@
 	//Funcionalidade Gravar Cadastro
 	if(isset($_POST['btnGravar'])){
 		unset($_GET['cadastrar']);
-		if(	!empty($_POST['loginUsuario']) && !empty($_POST['nomeUsuario']) && !empty($_POST['senhaUsuario'])){
+		if(	!empty($_POST['loginUsuario']) && !empty($_POST['nomeUsuario']) && !empty($_POST['senhaUsuario']) && !empty($_POST['perfilUsuario'])){
 			$_POST['usuarioAtivo'] = isset($_POST['usuarioAtivo']) ? 1 : 0;
 			
 			$_POST['usuarioAtivo'] = (int) $_POST['usuarioAtivo'];
@@ -34,7 +34,7 @@
 							
 		} else{
 		
-			$erro = 'Os campos: Login, Nome e Senha são obrigatórios';
+			$erro = 'Os campos: Login, Nome, Senha e tipo de usuário são obrigatórios';
 		
 		}
 	}

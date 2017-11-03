@@ -123,13 +123,28 @@
           padding: 5;
           max-height: 40px;
         }
-        table, th, td {
+        thead tr td, tr td.td-center {
+          text-align:center;
+        }
+        thead, td {
           border: 1px solid black;
           border-collapse: collapse;
+        }
+        tfoot, tfoot td{
+          border: hidden;
+          border-top: 1px solid black;
         }
         .nav-abas{
           text-align: right;
           align-content: right;
+        }
+        ul.pagination{
+          margin-top: auto;
+          margin-bottom: auto;
+        }
+        td.td-icon{
+          width: 68px;
+          height: 68px;
         }
 /*=====*/
 

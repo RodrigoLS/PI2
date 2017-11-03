@@ -63,17 +63,21 @@
 						"<tr>
 							<td> $idUsuario </td>
 							<td> {$dadosUsuario['loginUsuario']} </td>
-							<td> $utf_nomeUsuario </td>
-							<td> {$dadosUsuario['tipoPerfil']} </td>
-							<td> {$dadosUsuario['usuarioAtivo']} </td>
-							<td><a href='?editar=$idUsuario'> <i class='small material-icons'>edit</i> </a></td>
-							<td><a href='?apagar=$idUsuario'> <i class='small material-icons'>delete</i></a></td>
+							<td> $utf_nomeUsuario </td> "?>
+							<td class="td-center"> <?php if($dadosUsuario['tipoPerfil'] == "A") echo "Administrador"; 
+									   elseif ($dadosUsuario['tipoPerfil'] == "C") echo "Colaborador"; 
+									   else echo "Indefinido" ?> </td>
+				            <td class="td-center"> <?php if($dadosUsuario['usuarioAtivo'] == 0) echo "Inativo"; 
+				                       elseif($dadosUsuario['usuarioAtivo'] == 1) echo "Ativo";
+				                       else echo "Indefinido" ?> </td>
+							<td class="td-center"> <?php echo "<a href='?editar=$idUsuario'> <i class='small material-icons'>edit</i> </a></td>
+							<td class='td-center'><a href='?apagar=$idUsuario'> <i class='small material-icons'>delete</i></a></td>
 						</tr>";
 					} 
 
 				?>
 				<tfoot>
-					<td><a class="btn btn-floating btn-large light-blue darken-1 pulse" href="?cadastrar=1"><i class="material-icons">add</i></a></td>
+					<td class="td-icon"><a class="btn btn-floating btn-large light-blue darken-1 pulse" href="?cadastrar=1"><i class="material-icons">add</i></a></td>
 					<td colspan="6">
 					<div class="nav-abas">	
 						<ul class="pagination">
