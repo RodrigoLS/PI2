@@ -78,7 +78,32 @@
 							<td> $utf_descProduto </td>
 							<td> $mod_dadosProduto </td>
 							<td> $mod_descontoProduto </td>
-							<td> {$dadosProduto['idCategoria']} </td>
+							<td>";  
+							
+								include('../db/bancodedados.php');
+							
+								$query = odbc_exec($db, 'SELECT idCategoria, nomeCategoria FROM Categoria');
+							
+								$info_categoria = array();
+								
+									while ($resul = odbc_fetch_array($query)) {
+										
+										$resul['nomeCategoria'] = utf8_encode($resul['nomeCategoria']);
+										$info_categoria[$resul['idCategoria']] = $resul['nomeCategoria']; 
+											
+									}
+									
+									foreach ($info_categoria as $id => $valor) {
+										
+										if ($dadosProduto['idCategoria'] == $id) {
+											
+											echo $valor;
+											
+										}
+									}
+							
+						echo 
+						"</td>
 							<td> {$dadosProduto['ativoProduto']} </td>
 							<td> {$dadosProduto['idUsuario']} </td>
 							<td> {$dadosProduto['qtdMinEstoque']} </td>
