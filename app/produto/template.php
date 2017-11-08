@@ -142,7 +142,37 @@
 						echo 
 						"</td>
 							<td> {$dadosProduto['ativoProduto']} </td>
-							<td> {$dadosProduto['idUsuario']} </td>
+							<td>";
+							
+								$query = "";
+								
+								$query = odbc_exec($db, 'SELECT idUsuario, nomeUsuario FROM Usuario');
+								
+								$info_usuario = array();
+								
+								$resul = "";
+								
+									while ($resul = odbc_fetch_array($query)) {
+										
+										$resul['nomeUsuario'] = utf8_decode($resul['nomeUsuario']);
+										$info_usuario[$resul['idUsuario']] = $resul['nomeUsuario'];
+										
+									}
+									
+									$id = "";
+									
+									foreach ($info_usuario as $id => $nome) {
+										
+										if ($dadosProduto['idUsuario'] == $id) {
+											
+											echo $nome;
+											
+										}
+										
+									}	
+							
+						echo 
+						"</td>
 							<td> {$dadosProduto['qtdMinEstoque']} </td>
 							<td> $img_imagem_base64 </td>
 							<td><a href='?editar=$idProduto'> <i class='small material-icons'>edit</i> </a></td>
