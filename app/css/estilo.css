@@ -146,6 +146,9 @@
           width: 68px;
           height: 68px;
         }
+        .dis-none{
+          display: none;
+        }
 /*=====*/
 
 /*Região Central - Páginas de edição e cadastro*/
