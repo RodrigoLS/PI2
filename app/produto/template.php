@@ -5,6 +5,10 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="../css/estilo.css">
+  <!-- Jquerry-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>   
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.js"></script>
 </head>
 <body>
 <header>
@@ -80,18 +84,17 @@
 			?>
 			
 			<br>			
-			<table class="tableProdutos striped responsive-table">
+			<table class="striped responsive-table">
 				<thead>
-					<td><b>ID</b></td>
+					<td class="dis-none"><b>ID</b></td>
 					<td><b>Nome</b></td>
-					<td><b>Descrição</b></td>
 					<td><b>Preço(R$)</b></td>
 					<td><b>Desconto(%)</b></td>
 					<td><b>Categoria</b></td>
 					<td><b>Ativo</b></td>
 					<td><b>Usuário</b></td>
 					<td><b>Qtd no Estoque</b></td>
-					<td><b>Imagem</b></td>
+					<td><b>Detalhes/Imagem</b></td>
 					<td><b>Editar</b></td>
 					<td><b>Excluir</b>	</td>
 				</thead>
@@ -110,11 +113,10 @@
 						$img_imagem_base64 = "<img height='200px' weight='200px 'src=\"data:image/jpeg;base64,".$img_imagem_base64."\">";
 						echo 
 						"<tr>
-							<td> $idProduto </td>
+							<td class='dis-none'> $idProduto </td>
 							<td> $utf_nomeProduto </td>
-							<td> $utf_descProduto </td>
 							<td> $mod_dadosProduto </td>
-							<td> $mod_descontoProduto </td>
+							<td class='td-center'> $mod_descontoProduto </td>
 							<td>";  
 							
 								include('../db/bancodedados.php');
@@ -141,7 +143,7 @@
 							
 						echo 
 						"</td>
-							<td> {$dadosProduto['ativoProduto']} </td>
+							<td class='td-center'> {$dadosProduto['ativoProduto']} </td>
 							<td>";
 							
 								$query = "";
@@ -173,10 +175,19 @@
 							
 						echo 
 						"</td>
-							<td> {$dadosProduto['qtdMinEstoque']} </td>
-							<td> $img_imagem_base64 </td>
-							<td><a href='?editar=$idProduto'> <i class='small material-icons'>edit</i> </a></td>
-							<td><a href='?apagar=$idProduto'> <i class='small material-icons'>delete</i></a></td>
+							<td class='td-center'> {$dadosProduto['qtdMinEstoque']} </td>
+							<td class='td-center'><a class='waves-effect waves-light btn modal-trigger blue darken-1' href='#$idProduto'><i class='small material-icons'>more_horiz</i></a></td>
+							<td class='td-center'><a href='?editar=$idProduto'> <i class='small material-icons'>edit</i> </a></td>
+							<td class='td-center'><a href='?apagar=$idProduto'> <i class='small material-icons'>delete</i></a></td>
+							<div id='$idProduto' class='modal'>
+							    <div class='modal-content'>
+									$utf_descProduto
+									$img_imagem_base64
+							    </div>
+							    <div class='modal-footer'>
+							      <a href='#!'' class='modal-action modal-close waves-effect waves-green btn-flat'>Retornar</a>
+							    </div>
+							</div>
 						</tr>";
 					} 
 				?>
@@ -238,5 +249,11 @@
     	$('select').material_select();
         });
     </script>	
+	<script type="text/javascript">
+    $(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+  });
+      </script>
 </body>
 </html>		
