@@ -66,16 +66,26 @@ if(isset($_POST['btnAtualizar'])){
 
 // Consulta para apagar 
 	if(isset($_GET['apagar'])){
+
 		if(is_numeric($_GET['apagar'])){
-			
-			if(odbc_exec($db, "	DELETE 
+
+		$v = odbc_exec($db,"SELECT nomeProduto 
+										FROM Produto 
+										WHERE idCategoria = {$_GET['apagar']}");
+
+			if(odbc_exec($db, "DELETE 
 								FROM 
 									Categoria 
 								WHERE 
 									idCategoria = {$_GET['apagar']}")){	
 				$msg = 'Registro apagado com sucesso!';		
 				
-			}else{
+			}
+			elseif (odbc_num_rows($v) > 0 ) {
+				$erro = 'Categoria não pode ser deletada pois existem produtos pertencentes a ela!';	
+			}
+
+			else{
 				$erro = 'Erro ao apagar o registro';
 			}	
 		}	
