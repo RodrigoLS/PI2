@@ -35,10 +35,18 @@
 		
 			<?php
 				if(isset($msg))
-					echo "	<br> $msg <br>";
+					echo "<br>
+						  <div class='center-align'>
+							<p class='green-text text-darken-3'> <i class='small material-icons'>done</i> $msg </p> 
+						  </div>
+						  <br>";
 				
 				if(isset($erro))
-					echo "	<br> $erro <br>";
+					echo "	<br>
+							<div class='center-align'>
+								<p class='red-text text-accent-4'> <i class='small material-icons'>error</i> $erro </p>
+							</div>	
+							<br>";
 			?>
 			
 			<br>			
