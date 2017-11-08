@@ -1,9 +1,15 @@
-<html>
+﻿<html>
 <head>
 <meta charset="utf-8">
 <title>Login |HIPPO|</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 <link rel="stylesheet" type="text/css" href="css/estilo.css">
+<style>
+body {
+background-image:url(img/foodd.jpg);
+background-size: cover;
+	}
+</style>
 </head>
 <body>
 	<header class="headerLogon"> </header>
