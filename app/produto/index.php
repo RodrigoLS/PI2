@@ -184,7 +184,7 @@ if (isset($_GET['consulta'])) {
 		$pagina_anterior = $pagina - 1;
 		$pagina_posterior = $pagina + 1;
 //Seleciona todos os itens da tabela
-		$q = odbc_exec($db, "SELECT * FROM Usuario");
+		$q = odbc_exec($db, "SELECT * FROM Produto");
 
 //Conta o total de entradas da tabela
 		$total_produto = odbc_num_rows($q);
