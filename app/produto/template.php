@@ -18,7 +18,7 @@
 				<ul  class="left">
 					<li><a href="../user">Usuario</a></li>
 					<li><a href="../categoria">Categoria</a></li>
-					<li class="active_menu" ><a>Produto</a></li>
+					<li class="active_menu" ><a href="../produto">Produto</a></li>
 				</ul>
 				<img src="../img/LogoHippo.jpg" alt="Logo Loja" class="brand-logo center" id="LogoMenu">
 				<ul class="right">
@@ -64,9 +64,7 @@
 
 				<input type="submit" name="filtrar" id="buscar">
 			</form> <br><br>
-
-			<a href="?cadastrar=1">Adicionar novo produto</a>	<br>
-		
+	
 			<?php
 				if(isset($msg))
 					echo "<br>

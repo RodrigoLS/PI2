@@ -13,7 +13,7 @@
 		<nav>
 			<div class="nav-wrapper">
 				<ul  class="left">
-					<li class="active_menu" ><a>Usuario</a></li>
+					<li class="active_menu" ><a href="../user">Usuario</a></li>
 					<li><a href="../categoria">Categoria</a></li>
 					<li><a href="../produto">Produto</a></li>
 				</ul>
@@ -54,7 +54,7 @@
 			<table class="striped responsive-table">
 				<caption><b>Usuários Cadastrados</b></caption>
 				<thead>
-					<td><b>ID</b></td>
+					<td class="dis-none"><b>ID</b></td>
 					<td><b>Login</b></td>
 					<td><b>Nome</b></td>
 					<td><b>Perfil</b></td>
@@ -69,7 +69,7 @@
 						$utf_nomeUsuario = utf8_encode($utf_nomeUsuario);
 						echo 
 						"<tr>
-							<td> $idUsuario </td>
+							<td class='dis-none'> $idUsuario </td>
 							<td> {$dadosUsuario['loginUsuario']} </td>
 							<td> $utf_nomeUsuario </td> "?>
 							<td class="td-center"> <?php if($dadosUsuario['tipoPerfil'] == "A") echo "Administrador"; 
@@ -78,7 +78,7 @@
 				            <td class="td-center"> <?php if($dadosUsuario['usuarioAtivo'] == 0) echo "Inativo"; 
 				                       elseif($dadosUsuario['usuarioAtivo'] == 1) echo "Ativo";
 				                       else echo "Indefinido" ?> </td>
-							<td class="td-center"> <?php echo "<a href='?editar=$idUsuario'> <i class='small material-icons'>edit</i> </a></td>
+							<td class='td-center'> <?php echo "<a href='?editar=$idUsuario'> <i class='small material-icons'>edit</i> </a></td>
 							<td class='td-center'><a href='?apagar=$idUsuario'> <i class='small material-icons'>delete</i></a></td>
 						</tr>";
 					} 

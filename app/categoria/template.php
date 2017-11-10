@@ -14,7 +14,7 @@
 			<div class="nav-wrapper">
 				<ul  class="left">
 					<li><a href="../user">Usuario</a></li>
-					<li class="active_menu" ><a>Categoria</a></li>
+					<li class="active_menu" ><a href="../categoria">Categoria</a></li>
 					<li><a href="../produto">Produto</a></li>
 				</ul>
 				<img src="../img/LogoHippo.jpg" alt="Logo Loja" class="brand-logo center" id="LogoMenu">
@@ -54,7 +54,7 @@
 			<table class="striped responsive-table">
 				<caption><b>Categorias Cadastradas</b></caption>
 				<thead>
-					<td><b>ID</b></td>
+					<td class='dis-none'><b>ID</b></td>
 					<td><b>Nome</b></td>
 					<td><b>Descrição</b></td>
 					<td><b>Editar</b></td>
@@ -69,11 +69,11 @@
 						$utf_descCategoria = utf8_encode($utf_descCategoria);
 						echo 
 						"<tr>
-							<td> $idCategoria </td>
+							<td class='dis-none'> $idCategoria </td>
 							<td> $utf_nomeCategoria </td>
 							<td> $utf_descCategoria </td>
-							<td><a href='?editar=$idCategoria'> <i class='small material-icons'>edit</i> </a></td>
-							<td><a href='?apagar=$idCategoria'> <i class='small material-icons'>delete</i></a></td>
+							<td class='td-center'><a href='?editar=$idCategoria'> <i class='small material-icons'>edit</i> </a></td>
+							<td class='td-center'><a href='?apagar=$idCategoria'> <i class='small material-icons'>delete</i></a></td>
 						</tr>";
 					} 
 
