@@ -43,6 +43,12 @@
         .btn-log:hover{
           background-color:#BD0100;
         }
+
+      /*Ajuste input*/
+          input#loginUser, input#loginPass{
+          height: 3rem!important;
+          margin-bottom: 20px;
+        }
 /*=====*/
 
 /*Região Superior - Páginas em Geral*/ 
@@ -163,6 +169,10 @@
           border-radius: 20px;
           padding: 20px;
           box-shadow: 5px 5px black;
+        }
+        input{
+          height: 2rem!important;
+          margin-bottom: 10px;
         }
 /*=====*/
 
