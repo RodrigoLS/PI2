@@ -14,8 +14,12 @@
 		<form method="post">
 			<fieldset>
 			<legend><b>EDIÇÃO CATEGORIA</b></legend>
-			<label> Nome: </label> <input type="text" name="nomeCategoria" value="<?php echo $dados_categorias['nomeCategoria']; ?>"><br><br>
-			<label> Descrição: </label> <input type="text" name="descCategoria" value="<?php echo $dados_categorias['descCategoria']; ?>" ><br><br>
+				<div class="input-field">	
+					<input id="nome-categoria" type="text" name="nomeCategoria" value="<?php echo $dados_categorias['nomeCategoria']; ?>"><label for="nome-categoria">Nome:</label>
+				</div>
+				<div class="input-field">
+					 <textarea id="textarea1" class="materialize-textarea" name="descCategoria"> <?php echo $dados_categorias['descCategoria']; ?> </textarea><label for="textarea1">Descrição:</label><br>
+				</div>
 			<input type="hidden" name="idCategoria" value="<?php echo $dados_categorias['idCategoria']; ?>">
 			<input type="submit" value="Atualizar" name="btnAtualizar" class="waves-effect waves-light btn-large">
 			</fieldset>
