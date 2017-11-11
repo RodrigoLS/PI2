@@ -157,8 +157,14 @@
 							<td class='td-center'><a href='?apagar=$idProduto'> <i class='small material-icons'>delete</i></a></td>
 							<div id='$idProduto' class='modal'>
 							    <div class='modal-content'>
-									$utf_descProduto
-									$img_imagem_base64
+							    	<div class='center-align'>
+								    	<b>$utf_nomeProduto</b>
+								    	<br><hr><br>
+										$utf_descProduto
+										<br><hr><br>
+										$img_imagem_base64
+										<hr>
+									</div>
 							    </div>
 							    <div class='modal-footer'>
 							      <a href='#!'' class='modal-action modal-close waves-effect waves-green btn-flat'>Retornar</a>
