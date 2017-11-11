@@ -197,19 +197,32 @@
 /*=====*/
 
 /*Página Apresentação*/
-        section img#LogoMenu{
+        section#sec-menu{
+          background-color: black;
+        }
+
+        section article{
           max-width: 50%;
           max-height: 50%;
-          height: auto;
-          width: auto;
-          border-color: black;
-          border: solid;
-          border-width: 3px;
-          border-radius: 50%;
+          color: white;
           position: absolute;
           left: 50%;
           top: 50%;
           transform: translate(-50%,-50%);
+        }
+        .text-1{
+        font-family: 'Passion One', cursive;
+        font-size: 30px;
+        }
+        .text-2{
+        font-family: 'Lobster', cursive;
+        font-size: 50px;
+        font-style: italic;
+        }
+        .text-3{
+        font-family: 'Prompt', sans-serif;
+        font-size: 60px;
+        font-style: bolder;
         }
 /*=====*/
 

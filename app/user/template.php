@@ -75,9 +75,9 @@
 							<td class="td-center"> <?php if($dadosUsuario['tipoPerfil'] == "A") echo "Administrador"; 
 									   elseif ($dadosUsuario['tipoPerfil'] == "C") echo "Colaborador"; 
 									   else echo "Indefinido" ?> </td>
-				            <td class="td-center"> <?php if($dadosUsuario['usuarioAtivo'] == 0) echo "Inativo"; 
-				                       elseif($dadosUsuario['usuarioAtivo'] == 1) echo "Ativo";
-				                       else echo "Indefinido" ?> </td>
+				            <td class="td-center"> <?php if($dadosUsuario['usuarioAtivo'] == 0) echo " <i class='small material-icons red-text'>cancel</i>"; 
+				                       elseif($dadosUsuario['usuarioAtivo'] == 1) echo " <i class='small material-icons green-text'>check_circle</i>";
+				                       else echo "?" ?> </td>
 							<td class='td-center'> <?php echo "<a href='?editar=$idUsuario'> <i class='small material-icons'>edit</i> </a></td>
 							<td class='td-center'><a href='?apagar=$idUsuario'> <i class='small material-icons'>delete</i></a></td>
 						</tr>";

@@ -90,7 +90,7 @@
 					<td><b>Desconto(%)</b></td>
 					<td><b>Categoria</b></td>
 					<td><b>Ativo</b></td>
-					<td><b>Usuário</b></td>
+					<td><b>Alterado por</b></td>
 					<td><b>Qtd no Estoque</b></td>
 					<td><b>Detalhes/Imagem</b></td>
 					<td><b>Editar</b></td>
@@ -117,60 +117,38 @@
 							<td class='td-center'> $mod_descontoProduto </td>
 							<td>";  
 							
-								include('../db/bancodedados.php');
-							
-								$query = odbc_exec($db, 'SELECT idCategoria, nomeCategoria FROM Categoria');
-							
+								include('../db/bancodedados.php');					
+								$query = odbc_exec($db, 'SELECT idCategoria, nomeCategoria FROM Categoria');		
 								$info_categoria = array();
-								
 									while ($resul = odbc_fetch_array($query)) {
-										
 										$resul['nomeCategoria'] = utf8_encode($resul['nomeCategoria']);
-										$info_categoria[$resul['idCategoria']] = $resul['nomeCategoria']; 
-											
-									}
-									
-									foreach ($info_categoria as $id => $valor) {
-										
-										if ($dadosProduto['idCategoria'] == $id) {
-											
-											echo $valor;
-											
-										}
-									}
-							
-						echo 
-						"</td>
-							<td class='td-center'> {$dadosProduto['ativoProduto']} </td>
-							<td>";
-							
-								$query = "";
-								
-								$query = odbc_exec($db, 'SELECT idUsuario, nomeUsuario FROM Usuario');
-								
-								$info_usuario = array();
-								
-								$resul = "";
-								
-									while ($resul = odbc_fetch_array($query)) {
-										
-										$resul['nomeUsuario'] = utf8_decode($resul['nomeUsuario']);
-										$info_usuario[$resul['idUsuario']] = $resul['nomeUsuario'];
-										
-									}
-									
-									$id = "";
-									
-									foreach ($info_usuario as $id => $nome) {
-										
-										if ($dadosProduto['idUsuario'] == $id) {
-											
-											echo $nome;
-											
-										}
-										
+										$info_categoria[$resul['idCategoria']] = $resul['nomeCategoria']; 			
 									}	
-							
+									foreach ($info_categoria as $id => $valor) {	
+										if ($dadosProduto['idCategoria'] == $id) {	
+											echo $valor;	
+										}
+									}
+				?>
+ 							<td class="td-center"> <?php if($dadosProduto['ativoProduto'] == 0) echo " <i class='small material-icons red-text'>cancel</i>"; 
+				                elseif($dadosProduto['ativoProduto'] == 1) echo " <i class='small material-icons green-text'>check_circle</i>";
+				                else echo "?" ?> </td>
+							<td>
+				<?php
+								$query = "";
+								$query = odbc_exec($db, 'SELECT idUsuario, nomeUsuario FROM Usuario');
+								$info_usuario = array();
+								$resul = "";
+									while ($resul = odbc_fetch_array($query)) {	
+										$resul['nomeUsuario'] = utf8_decode($resul['nomeUsuario']);
+										$info_usuario[$resul['idUsuario']] = $resul['nomeUsuario'];	
+									}	
+									$id = "";
+									foreach ($info_usuario as $id => $nome) {	
+										if ($dadosProduto['idUsuario'] == $id) {	
+											echo $nome;	
+										}	
+									}	
 						echo 
 						"</td>
 							<td class='td-center'> {$dadosProduto['qtdMinEstoque']} </td>
