@@ -20,7 +20,7 @@
 		<legend><b>NOVO PRODUTO</b></legend>
 
 		<div class="input-field">
-		<input id="in-nome" type="text" name="nomeProduto"><label for="in-nome">Nome:</label>
+		<input id="in-nome" type="text" name="nomeProduto" class="validate"><label for="in-nome">Nome:</label>
 		</div>
 
 		<div class="input-field">
@@ -28,7 +28,7 @@
 		</div>
 
 		<div class="input-field">
-		<input id="in-preco" type="number" name="precProduto"><label for="in-preco">Preço(R$):</label>
+		<input id="in-preco" type="number" name="precProduto" class="validate"><label for="in-preco">Preço(R$):</label>
 		</div>
 
 		<div class="input-field">
@@ -62,7 +62,7 @@
 		<input type="hidden" name="idUsuario" value="<?php echo"$id_user"?>"> 
 
 		<div class="input-field">
-		<input id="in-estoque" type="number" name="qtdMinEstoque"><label for="in-estoque">Qtd Min. no Estoque:</label>
+		<input id="in-estoque" type="number" name="qtdMinEstoque" class="validate"><label for="in-estoque">Qtd Min. no Estoque:</label>
 		</div>
 
 	    <div class="file-field input-field">

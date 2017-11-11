@@ -18,13 +18,13 @@
 		<fieldset>
 			<legend><b>NOVO USUÁRIO</b></legend>
 			<div class="input-field">
-			<input id="in-login" type="text" name="loginUsuario"><label for="in-login">Login:</label><br></div>
+			<input id="in-login" type="text" name="loginUsuario" class="validate"><label for="in-login">Login:</label><br></div>
 			
 			<div class="input-field">
-			<input id="in-senha" type="password" name="senhaUsuario"><label for="in-senha">Senha:</label><br></div>
+			<input id="in-senha" type="password" name="senhaUsuario" class="validate"><label for="in-senha">Senha:</label><br></div>
 
 			<div class="input-field">
-			<input id="in-nome" type="text" name="nomeUsuario"><label for="in-nome">Nome:</label><br></div>
+			<input id="in-nome" type="text" name="nomeUsuario" class="validate"><label for="in-nome">Nome:</label><br></div>
 
 			<label>Perfil:</label> 
 			<select name="perfilUsuario">
