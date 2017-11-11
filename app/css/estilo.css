@@ -18,6 +18,11 @@
 /*=====*/
 
 /*TELA LOGIN*/
+      /*Figura background*/
+      #body-logon{
+        background-image:url(../img/foodd.jpg);
+        background-size: cover;
+      }
       /*Região Superior - Página Logon*/
       .headerLogon{
         height: 74px;
@@ -172,7 +177,8 @@
         }
         input{
           height: 2rem!important;
-          margin-bottom: 10px;
+          padding-bottom: 5px!important;
+          margin-bottom: 10px!important;
         }
 /*=====*/
 

@@ -4,14 +4,8 @@
 <title>Login |HIPPO|</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 <link rel="stylesheet" type="text/css" href="css/estilo.css">
-<style>
-body {
-background-image:url(img/foodd.jpg);
-background-size: cover;
-	}
-</style>
 </head>
-<body>
+<body id="body-logon">
 	<header class="headerLogon"> </header>
 	<div class="main grey lighten-3 center-align">		
 			<form  method="post">
@@ -19,12 +13,12 @@ background-size: cover;
 
 			  <div class="input-field">	
 			  	  <input id="loginUser" type="text" name="login" class="validade">
-			  	  <label for="loginUser"> Usuário </label>
+			  	  <label for="loginUser">Usuário</label>
 			 	  <br>
 			  </div>
 			  <div class="input-field">
 				  <input id="loginPass" type="password" name="senha" class="validade">
-				  <label for="loginPass">Senha:</label>
+				  <label for="loginPass">Senha</label>
 			  	  <br>
 			  </div>
 			  <button class="waves-effect waves-light btn-large btn-log" type="submit" value="Login" name="btnLogin">Login</button>

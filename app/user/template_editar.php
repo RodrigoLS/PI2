@@ -17,16 +17,22 @@
 		<form method="post">
 			<fieldset>
 			<legend><b>EDIÇÃO USUÁRIO</b></legend>
-			<label> Login: </label> <input type="text" name="loginUsuario" value="<?php echo $dados_usuario['loginUsuario']; ?>"><br><br>
-			<label> Senha: </label> <input type="password" name="senhaUsuario"><br><br>
-			<label> Nome: </label> <input type="text" name="nomeUsuario" value="<?php echo $dados_usuario['nomeUsuario']; ?>"><br><br>
+
+			<div class="input-field">
+			<input id="in-login" type="text" name="loginUsuario" value="<?php echo $dados_usuario['loginUsuario']; ?>"><label for="in-login">Login:</label><br></div>
+
+			<div class="input-field">
+			<input id="in-senha" type="password" name="senhaUsuario"><label for="in-senha">Senha:</label><br></div>
+
+			<div class="input-field">
+			<input id="in-nome" type="text" name="nomeUsuario" value="<?php echo $dados_usuario['nomeUsuario']; ?>"><label for="in-nome">Nome:</label><br></div>
 			<label> Perfil: </label> <select name="perfilUsuario">
 						<option value="">Escolha</option>
 						<option value="A" 
 						<?php if($dados_usuario['tipoPerfil'] == 'A') echo "selected"; ?>>Administrador</option>
 						<option value="C"
 						<?php if($dados_usuario['tipoPerfil'] == 'C') echo "selected"; ?>>Colaborador</option>
-					</select><br><br>
+					</select><br>
 			<input type="checkbox" name="usuarioAtivo" id="ativo" 
 					<?php if($dados_usuario['usuarioAtivo'] == 1) echo "checked"; ?>>
 			<label for="ativo"> Status Ativo </label> <br><br>
