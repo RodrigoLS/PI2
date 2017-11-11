@@ -11,19 +11,29 @@
 		  include('../db/bancodedados.php');
 		  session_start();
 		  $id_user = $_SESSION["idUsuario"];
-		  ?>
+	?>
+
 <section>
 	<div class="main grey lighten-3 center-align">
 	<form method="POST" enctype="multipart/form-data" class="formProduto">
 		<fieldset>
 		<legend><b>NOVO PRODUTO</b></legend>
-		<label>Nome:</label> <input type="text" name="nomeProduto"> <br>
 
-		<label>Descrição:</label> <input type="text" name="descProduto"> <br>
+		<div class="input-field">
+		<input id="in-nome" type="text" name="nomeProduto"><label for="in-nome">Nome:</label>
+		</div>
 
-		<label>Preço:</label> <input type="number" name="precProduto"> <br>
+		<div class="input-field">
+		<input id="in-desc" type="text" name="descProduto"><label for="in-desc">Descrição:</label>
+		</div>
 
-		<label>Desconto:</label> <input type="number" name="descontoPromocao"> <br>
+		<div class="input-field">
+		<input id="in-preco" type="number" name="precProduto"><label for="in-preco">Preço(R$):</label>
+		</div>
+
+		<div class="input-field">
+		<input id="in-descon" type="number" name="descontoPromocao"><label for="in-descon">Desconto(%):</label> 
+		</div>
 
 		<label>Categoria:</label> 
 		<select name="idCategoria">
@@ -47,14 +57,13 @@
 				}
 			?>
 
-		</select><br>
-
-		<input type="checkbox" id="ativo1" name="ativoProduto"> 
-		<label for="ativo1">Status Ativo</label> <br> <br>
+		</select>
 
 		<input type="hidden" name="idUsuario" value="<?php echo"$id_user"?>"> 
 
-		<label>Qtd Min. no Estoque:</label> <input type="number" name="qtdMinEstoque"> <br>
+		<div class="input-field">
+		<input id="in-estoque" type="number" name="qtdMinEstoque"><label for="in-estoque">Qtd Min. no Estoque:</label>
+		</div>
 
 	    <div class="file-field input-field">
 	      <div class="btn light-blue darken-1">
@@ -66,6 +75,9 @@
 	      </div>
 	    </div>
 		<br>
+		<input type="checkbox" id="ativo1" name="ativoProduto"> 
+		<label for="ativo1">Status Ativo</label> 
+		<br><br>
 		<input type="submit" value="Gravar" name="btnGravar" class="waves-effect waves-light btn-large">
 		</fieldset>
 	</form>

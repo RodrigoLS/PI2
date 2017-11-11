@@ -10,21 +10,30 @@
 	<?php include('../layout/cabecalhoVoltar.php'); 
 		  include('../db/bancodedados.php');
 		  session_start();
-		  $id_user = $_SESSION["idUsuario"];
-		  
-		  ?>
+		  $id_user = $_SESSION["idUsuario"];		  
+	?>
+
 <section>
 	<div class="main grey lighten-3 center-align">
 	<form method="POST" enctype="multipart/form-data" class="formProduto">
 		<fieldset>
 		<legend><b>EDIÇÃO PRODUTO</b></legend>
-		<label>Nome:</label> <input type="text" name="nomeProduto" value=" <?php echo $dados_produtos['nomeProduto']; ?>"> <br>
 
-		<label>Descrição:</label> <input type="text" name="descProduto" value=" <?php echo $dados_produtos['descProduto']; ?>"> <br>
+		<div class="file-field input-field">
+		<input id="in-nome" type="text" name="nomeProduto" value=" <?php echo $dados_produtos['nomeProduto']; ?>"><label for="in-nome">Nome:</label>
+		</div>
 
-		<label>Preço:</label> <input type="number" name="precProduto" value="<?php echo $dados_produtos['precProduto']; ?>"> <br>
+		<div class="file-field input-field">
+		<input id="in-desc" type="text" name="descProduto" value=" <?php echo $dados_produtos['descProduto']; ?>"><label for="in-desc">Descrição:</label>
+		</div>
 
-		<label>Desconto:</label> <input type="number" name="descontoPromocao" value="<?php echo $dados_produtos['descontoPromocao']; ?>"> <br>
+		<div class="file-field input-field">
+		<input id="in-preco" type="number" name="precProduto" value="<?php echo $dados_produtos['precProduto']; ?>"><label for="in-preco">Preço(R$):</label> 
+		</div>
+
+		<div class="file-field input-field">
+		<input id="in-descon" type="number" name="descontoPromocao" value="<?php echo $dados_produtos['descontoPromocao']; ?>"><label for="in-descon">Desconto(%):</label>
+		</div>
 
 		<label>Categoria:</label> 
 		<select name="idCategoria">
@@ -49,15 +58,13 @@
 				}
 			?>
 
-		</select><br>
-
-		<input type="checkbox" id="ativo1" name="ativoProduto" 
-			<?php if($dados_produtos['ativoProduto'] == 1) echo "checked"; ?>>
-		<label for="ativo1">Status Ativo</label> <br> <br>
+		</select>
 
 		<input type="hidden" name="idUsuario" value="<?php echo"$id_user"?>"> 
 
-		<label>Qtd Min. no Estoque:</label> <input type="number" name="qtdMinEstoque" value="<?php echo $dados_produtos['qtdMinEstoque'];?>"> <br>
+		<div class="file-field input-field">
+		<input id="in-estoque" type="number" name="qtdMinEstoque" value="<?php echo $dados_produtos['qtdMinEstoque'];?>"><label for="in-estoque">Qtd Min. no Estoque:</label> 
+		</div>
 
 	    <div class="file-field input-field">
 	      <div class="btn light-blue darken-1">
@@ -68,7 +75,10 @@
 	        <input class="file-path validate" type="text">
 	      </div>
 	    </div>
-		<br>
+		<br>	
+		<input type="checkbox" id="ativo1" name="ativoProduto" 
+			<?php if($dados_produtos['ativoProduto'] == 1) echo "checked"; ?>>
+		<label for="ativo1">Status Ativo</label> <br> <br>
 
 		<input type="hidden" name="idProduto" value="<?php echo $_GET['editar']; ?>">
 		<input type="submit" value="Atualizar" name="btnAtualizar" class="waves-effect waves-light btn-large">
