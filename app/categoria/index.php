@@ -149,6 +149,8 @@ if(isset($_GET['cadastrar'])){//FORM Cadastrar
 								FROM Categoria 
 								WHERE idCategoria = {$_GET['editar']}");
 		$dados_categorias = odbc_fetch_array($q);
+		$dados_categorias['nomeCategoria'] = utf8_encode($dados_categorias['nomeCategoria']);
+		$dados_categorias['descCategoria'] = utf8_encode( $dados_categorias['descCategoria']);
 	}else{
 		$erro = 'Código inválido';
 	}

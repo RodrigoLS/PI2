@@ -9,7 +9,6 @@
 
 	<?php include('../layout/cabecalhoVoltar.php'); 
 		  include('../db/bancodedados.php');
-		  session_start();
 		  $id_user = $_SESSION["idUsuario"];		  
 	?>
 
