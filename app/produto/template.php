@@ -79,6 +79,17 @@
 								<p class='red-text text-accent-4'> <i class='small material-icons'>error</i> $erro </p>
 							</div>	
 							<br>";
+				
+
+				if(isset($erroImagem))
+					echo "	<br>
+							<div class='center-align'>
+								<p class='red-text text-accent-4'> <i class='small material-icons'>error</i> $erroImagem </p>
+							</div>	
+							<br>";
+				
+
+
 			?>
 			
 			<br>			

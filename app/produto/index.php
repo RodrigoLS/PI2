@@ -13,9 +13,17 @@
 			$_POST['descProduto'] = utf8_decode($_POST['descProduto']);
 			$_POST['ativoProduto'] = (int) $_POST['ativoProduto']; 
 			$_POST['idUsuario'] = intval($_POST['idUsuario']);
-			$arquivo = $_FILES['imagem']['tmp_name'];
-			$imagem = fopen($arquivo, "r");
-			$conteudo = fread($imagem, filesize($arquivo));
+			
+			//SÓ ACEITAR IMAGEM EM JPEG OU PNG
+			if (isset($_FILES['imagem'])) {
+			
+				if ($_FILES['imagem']['type'] == "image/jpeg" OR $_FILES['imagem']['type'] == "image/png") {
+			
+					$arquivo = $_FILES['imagem']['tmp_name'];
+					$imagem = fopen($arquivo, "r");
+					$conteudo = fread($imagem, filesize($arquivo));
+				} 
+			}
 
 			
 			$stmt = odbc_prepare($db, "	INSERT INTO Produto
@@ -65,13 +73,23 @@ if(isset($_POST['btnAtualizar'])){
 			$_POST['descProduto'] = utf8_decode($_POST['descProduto']);
 			$_POST['ativoProduto'] = (int) $_POST['ativoProduto'];	
 			$_POST['idUsuario'] = intval($_POST['idUsuario']);				
-			$arquivo = $_FILES['imagem']['tmp_name'];
-			$imagem = fopen($arquivo, "r");
-			$conteudo = fread($imagem, filesize($arquivo));
+			
+			//SÓ ACEITAR IMAGEM EM JPEG OU PNG
+			if (isset($_FILES['imagem'])) {
+			
+				if ($_FILES['imagem']['type'] == "image/jpeg" OR $_FILES['imagem']['type'] == "image/png") {
+			
+					$arquivo = $_FILES['imagem']['tmp_name'];
+					$imagem = fopen($arquivo, "r");
+					$conteudo = fread($imagem, filesize($arquivo));
+				}
+			}
+
 			
 			// Se não for inserida nova imagem, manter a antiga:
 
 			if(empty($conteudo)) {
+
 				$stmt = odbc_prepare($db, "	UPDATE 
 											Produto
 										SET 
