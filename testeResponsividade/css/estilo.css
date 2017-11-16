@@ -1,0 +1,238 @@
+/*MODIFCAÇÕES GERAIS*/
+      body{
+        background-color: white;
+        height: 100vh;
+      }
+      header.login{
+        height: 74px;
+        background-color: #BD0100;
+        border-bottom: solid black 10px;
+      }
+      section.login{
+        height: calc(100vh - 74px - 74px);
+      }
+      label{
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+        color: #BD0100;
+        text-shadow: 1px 1px black;
+      }
+      footer, footer.login p{
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+        height: 74px;
+        background-color: #BD0100;
+        color: white;
+        border-top: solid black 10px;
+        z-index: -1;
+      }
+      .main{
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 5px 5px black;
+        padding: 20px 10px!important;
+      }
+      /*Classe para definir width cheia para a tela*/
+      .full{
+        width: 100vw;
+      }
+      .row{
+        margin-bottom: 0px;
+      }
+      .purpura{
+        background-color: #BD0100;
+      }
+/*=====*/
+
+/*TELA LOGIN*/
+      /*Figura background*/
+      #body-logon{
+        background-image:url(../img/foodd.jpg);
+        background-size: cover;
+      }
+      /*Estilo IMG página LOGIN*/
+      #imgLogin{
+        max-width: 120px;
+        width: 100%;
+        max-height: 120px;
+        height: auto;
+        border-color: black;
+        border: solid;
+        border-width: 2px;
+        border-radius: 50%;
+      }
+      /*Modificação letra User e Pass na tela Login*/
+      .input-field label{
+        color: #BD0100;
+      }
+
+      /*Botão Login - Página Logon*/
+        .btn-log:hover{
+          background-color:#BD0100;
+        }
+
+      /*Ajuste input*/
+          input#loginUser, input#loginPass{
+          height: 3rem!important;
+          margin-bottom: 20px;
+        }
+/*=====*/
+
+/*Região Superior - Páginas em Geral*/ 
+        nav{
+          background-color: #BD0100;
+        }
+        .active_menu{
+          background-color: black!important;
+          color: white!important;
+        }
+        #LogoMenu{
+          height:60px;
+          width:60px;
+          border-radius: 50%; 
+          border: solid 2px black;
+        }
+        header nav ul li p{
+          margin: 0 20px !important;
+        }
+        header nav ul.right{
+          background-color: black;
+        }
+        ul.right li a:hover{
+          background: white;
+          color: black;
+        }
+/*=====*/
+
+/*Região Central - Páginas em Geral*/
+
+        .active_aba{
+          background-color: #039be5!important; 
+          color: white!important;
+        }
+        .busca{
+          width: 50%;
+          margin: 5px auto 0 auto;
+        }
+        .input-busca{
+          display: inline-block!important;
+          width: 90%!important;
+        }
+        .button-busca{
+          display: inline-block!important;         
+        }
+        /*Título das Tabelas*/
+        caption{
+          padding-bottom: 20px;
+          text-transform: uppercase;
+        }
+        table{
+          width: 50%;
+          position: relative;
+          top: 25%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+        }
+        table{
+          overflow: scroll;
+        }
+
+        table tr td{
+          padding: 5;
+          max-height: 40px;
+        }
+        thead tr td, tr td.td-center {
+          text-align:center;
+        }
+        thead, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+        tfoot, tfoot td{
+          border: hidden;
+          border-top: 1px solid black;
+        }
+        .nav-abas{
+          text-align: right;
+          align-content: right;
+        }
+        ul.pagination{
+          margin-top: auto;
+          margin-bottom: auto;
+        }
+        td.td-icon{
+          width: 68px;
+          height: 68px;
+        }
+        .dis-none{
+          display: none;
+        }
+/*=====*/
+
+/*Região Central - Páginas de edição e cadastro*/
+        input{
+          height: 2rem!important;
+          padding-bottom: 5px!important;
+          margin-bottom: 10px!important;
+        }
+/*=====*/
+
+/*Região Inferior - Páginas em Geral*/
+
+
+/*=====*/
+
+/*Página Apresentação*/
+        section#sec-menu{
+          background-color: black;
+          height: calc(100vh - 64px - 74px);
+        }
+
+        section article{
+          max-width: 50%;
+          max-height: 50%;
+          color: white;
+        }
+        .text-1{
+        font-family: 'Passion One', cursive;
+        font-size: 30px;
+        }
+        .text-2{
+        font-family: 'Lobster', cursive;
+        font-size: 50px;
+        font-style: italic;
+        }
+        .text-3{
+        font-family: 'Prompt', sans-serif;
+        font-size: 60px;
+        font-style: bolder;
+        }
+/*=====*/
+
+
+/*Ajustes específicos da página de produtos*/
+          table.tableProdutos{
+            width: 100%;
+            top: 0%;
+            left: 0%;
+            transform: translate(0%,0%);
+          }
+          form.formProduto input{
+            height: 25px !important;
+            margin-bottom: 5px !important;
+          }
+          section.produto{
+            height: 80%;
+            overflow: auto;
+          }
+/*=====*/
+
+
+
+
+
+
+
+
+
