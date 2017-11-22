@@ -17,12 +17,14 @@
 			//SÓ ACEITAR IMAGEM EM JPEG OU PNG
 			if (isset($_FILES['imagem'])) {
 			
-				if ($_FILES['imagem']['type'] == "image/jpeg" OR $_FILES['imagem']['type'] == "image/png") {
+				if (($_FILES['imagem']['type'] == "image/jpeg" OR $_FILES['imagem']['type'] == "image/png") && ($_FILES['imagem']['size'] <= 1000000)) {
 			
 					$arquivo = $_FILES['imagem']['tmp_name'];
 					$imagem = fopen($arquivo, "r");
 					$conteudo = fread($imagem, filesize($arquivo));
-				} 
+				} else {
+					$ErroImagem = "A imagem não foi aceita. Só são suportadas imagens em formato JPEG ou PNG e menores que 1MB.";
+				}
 			}
 
 			
@@ -77,11 +79,13 @@ if(isset($_POST['btnAtualizar'])){
 			//SÓ ACEITAR IMAGEM EM JPEG OU PNG
 			if (isset($_FILES['imagem'])) {
 			
-				if ($_FILES['imagem']['type'] == "image/jpeg" OR $_FILES['imagem']['type'] == "image/png") {
+				if (($_FILES['imagem']['type'] == "image/jpeg" OR $_FILES['imagem']['type'] == "image/png") && ($_FILES['imagem']['size'] <= 1000000)) {
 			
 					$arquivo = $_FILES['imagem']['tmp_name'];
 					$imagem = fopen($arquivo, "r");
 					$conteudo = fread($imagem, filesize($arquivo));
+				} else {
+					$ErroImagem = "Sua imagem não foi alterada. Só são suportadas imagens em formato JPEG ou PNG e menores que 1MB.";
 				}
 			}
 
