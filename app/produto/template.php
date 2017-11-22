@@ -31,38 +31,9 @@
 </header>
 		<section class="produto">
 
-			<form method="GET" name="produtosFiltragem">
-				
-				<label>Nome Produto:</label>
-				<input type="text" name="fNomeProduto" placeholder="Insira o nome do produto">
-				
-				<label>Preço máximo:</label>
-				<input type="number" name="fPreco" placeholder="Valor máximo">
-
-				<label>Categoria:</label>
-		
-				<select name="idCategoria">
-					<option value="">Escolha</option>
-					<?php
-
-						$c = odbc_exec($db, 'SELECT idCategoria, nomeCategoria
-						 FROM Categoria');
-
-						while($cat = odbc_fetch_array($c)){
-							$cat['nomeCategoria'] = utf8_encode($cat['nomeCategoria']);
-							$categorias[$cat['idCategoria']] = $cat;
-						}
-
-						foreach ($categorias as $idCategoria => $dadosCategoria) {
-							$utf_nomeCategoria = $dadosCategoria['nomeCategoria'];
-								echo "<option value='$idCategoria'>$utf_nomeCategoria</option> ";
-							}
-						
-					?>
-
-		</select><br>
-
-				<input type="submit" name="filtrar" id="buscar">
+			<form class="busca" method="GET">
+				<input class="input-busca" type="text" name="consulta" placeholder="Insira sua consulta">
+				<button class="button-busca btn btn-floating btn-large light-blue darken-1" type="submit" name="buscar" id="buscar"><i class="material-icons">search</i></button>
 			</form> <br><br>	
 			
 			<br>			
