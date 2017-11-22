@@ -34,10 +34,34 @@
 			<form class="busca" method="GET">
 				<input class="input-busca" type="text" name="consulta" placeholder="Insira sua consulta">
 				<button class="button-busca btn btn-floating btn-large light-blue darken-1" type="submit" name="buscar" id="buscar"><i class="material-icons">search</i></button>
-			</form> <br><br>	
+			</form> 	
 			
+			<?php
+				if(isset($msg))
+					echo "
+						  <div class='center-align'>
+							<p class='green-text text-darken-3'> <i class='small material-icons'>done</i> $msg </p> 
+						  </div>
+						  ";
+				
+				if(isset($erro))
+					echo "	
+							<div class='center-align'>
+								<p class='red-text text-accent-4'> <i class='small material-icons'>error</i> $erro </p>
+							</div>	
+							";
+				
+
+				if(isset($erroImagem))
+					echo "	
+							<div class='center-align'>
+								<p class='red-text text-accent-4'> <i class='small material-icons'>error</i> $erroImagem </p>
+							</div>	
+							";
+			?>	
 			<br>			
-			<table class="striped responsive-table">
+			<table class="striped responsive-table" id="tabProduto">
+				<caption><b>Produtos Cadastrados</b></caption>
 				<thead>
 					<td class="dis-none"><b>ID</b></td>
 					<td><b>Nome</b></td>
@@ -175,30 +199,7 @@
 					</td>				
 				</tfoot>				
 			</table>
-			<br>
-			<?php
-				if(isset($msg))
-					echo "<br>
-						  <div class='center-align'>
-							<p class='green-text text-darken-3'> <i class='small material-icons'>done</i> $msg </p> 
-						  </div>
-						  <br>";
-				
-				if(isset($erro))
-					echo "	<br>
-							<div class='center-align'>
-								<p class='red-text text-accent-4'> <i class='small material-icons'>error</i> $erro </p>
-							</div>	
-							<br>";
-				
-
-				if(isset($erroImagem))
-					echo "	<br>
-							<div class='center-align'>
-								<p class='red-text text-accent-4'> <i class='small material-icons'>error</i> $erroImagem </p>
-							</div>	
-							<br>";
-			?>		
+			<br>	
 		</section>
 	
 	<?php  

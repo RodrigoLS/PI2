@@ -22,8 +22,6 @@
 					$arquivo = $_FILES['imagem']['tmp_name'];
 					$imagem = fopen($arquivo, "r");
 					$conteudo = fread($imagem, filesize($arquivo));
-				} else {
-					$ErroImagem = "A imagem não foi aceita. Só são suportadas imagens em formato JPEG ou PNG e menores que 1MB.";
 				}
 			}
 
@@ -84,9 +82,7 @@ if(isset($_POST['btnAtualizar'])){
 					$arquivo = $_FILES['imagem']['tmp_name'];
 					$imagem = fopen($arquivo, "r");
 					$conteudo = fread($imagem, filesize($arquivo));
-				} else {
-					$ErroImagem = "Sua imagem não foi alterada. Só são suportadas imagens em formato JPEG ou PNG e menores que 1MB.";
-				}
+				} 
 			}
 
 			
@@ -108,19 +104,19 @@ if(isset($_POST['btnAtualizar'])){
 										WHERE
 											idProduto = ?");
 										
-			if(odbc_execute($stmt, array(	$_POST['nomeProduto'],
-											$_POST['descProduto'],
-											$_POST['precProduto'],
-											$_POST['descontoPromocao'],
-											$_POST['idCategoria'],
-											$_POST['ativoProduto'],
-											$_POST['idUsuario'],
-											$_POST['qtdMinEstoque'],
-											$_POST['idProduto']))){
-				$msg = 'Produto atualizado com sucesso!';			
-			}else{
-				$erro = 'Erro ao atualizar o produto';
-			}
+					if(odbc_execute($stmt, array(	$_POST['nomeProduto'],
+													$_POST['descProduto'],
+													$_POST['precProduto'],
+													$_POST['descontoPromocao'],
+													$_POST['idCategoria'],
+													$_POST['ativoProduto'],
+													$_POST['idUsuario'],
+													$_POST['qtdMinEstoque'],
+													$_POST['idProduto']))){
+						$msg = 'Produto atualizado com sucesso!';			
+					}else{
+						$erro = 'Erro ao atualizar o produto';
+					}
 			} else {
 				$stmt = odbc_prepare($db, "	UPDATE 
 											Produto
@@ -137,20 +133,20 @@ if(isset($_POST['btnAtualizar'])){
 										WHERE
 											idProduto = ?");
 										
-			if(odbc_execute($stmt, array(	$_POST['nomeProduto'],
-											$_POST['descProduto'],
-											$_POST['precProduto'],
-											$_POST['descontoPromocao'],
-											$_POST['idCategoria'],
-											$_POST['ativoProduto'],
-											$_POST['idUsuario'],
-											$_POST['qtdMinEstoque'],
-											$conteudo,
-											$_POST['idProduto']))){
-				$msg = 'Produto atualizado com sucesso!';			
-			}else{
-				$erro = 'Erro ao atualizar o produto';
-			}
+					if(odbc_execute($stmt, array(	$_POST['nomeProduto'],
+													$_POST['descProduto'],
+													$_POST['precProduto'],
+													$_POST['descontoPromocao'],
+													$_POST['idCategoria'],
+													$_POST['ativoProduto'],
+													$_POST['idUsuario'],
+													$_POST['qtdMinEstoque'],
+													$conteudo,
+													$_POST['idProduto']))) {
+						$msg = 'Produto atualizado com sucesso!';			
+					}else{
+						$erro = 'Erro ao atualizar o produto';
+					}
 			}
 
 		} else{

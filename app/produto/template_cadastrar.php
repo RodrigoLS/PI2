@@ -72,6 +72,10 @@
 	      <div class="file-path-wrapper">
 	        <input class="file-path validate" type="text">
 	      </div>
+
+	      <i id="msgFormImg"><p>Formatos aceitos: JPEG e PNG.</p></i>
+	      <i id="msgFormImg"><p>Tamanho máximo: 1MB.</p></i>
+
 	    </div>
 		<br>
 		<input type="checkbox" id="ativo1" name="ativoProduto"> 
