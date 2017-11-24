@@ -31,9 +31,25 @@
 			<form class="busca" method="GET">
 				<input class="input-busca" type="text" name="consulta" placeholder="Insira sua consulta">
 				<button class="button-busca btn btn-floating btn-large light-blue darken-1" type="submit" name="buscar" id="buscar"><i class="material-icons">search</i></button>
-			</form> <br><br>
-			
-			<br>			
+			</form> <br><br>			
+
+			<?php
+				if(isset($msg))
+					echo "<br>
+						  <div class='center-align'>
+							<p class='green-text text-darken-3'> <i class='small material-icons'>done</i> $msg </p> 
+						  </div>
+						  <br>";
+				
+				if(isset($erro))
+					echo "	<br>
+							<div class='center-align'>
+								<p class='red-text text-accent-4'> <i class='small material-icons'>error</i> $erro </p>
+							</div>	
+							<br>";
+			?>
+
+			<br>
 
 			<table class="striped responsive-table">
 				<caption><b>Categorias Cadastradas</b></caption>
@@ -110,21 +126,7 @@
 				</tfoot>				
         </table>
 		<br>
-			<?php
-				if(isset($msg))
-					echo "<br>
-						  <div class='center-align'>
-							<p class='green-text text-darken-3'> <i class='small material-icons'>done</i> $msg </p> 
-						  </div>
-						  <br>";
-				
-				if(isset($erro))
-					echo "	<br>
-							<div class='center-align'>
-								<p class='red-text text-accent-4'> <i class='small material-icons'>error</i> $erro </p>
-							</div>	
-							<br>";
-			?>
+			
 		</section>
 	
 	<?php  

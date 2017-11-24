@@ -168,7 +168,7 @@ if(isset($_POST['btnAtualizar'])){
 									WHERE idProduto = {$_GET['apagar']}");
 
 			if (odbc_num_rows($v) > 0 ) {
-				$erro = 'Produto não pode ser deletado pois ele está presente em pedido(s) efetuado(s)!';
+				$erro = 'Produto não pode ser apagado pois ele está presente em pedido(s) efetuado(s)!';
 			}
 			elseif(odbc_exec($db, "	DELETE 
 								FROM 

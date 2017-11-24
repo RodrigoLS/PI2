@@ -74,7 +74,7 @@ if(isset($_POST['btnAtualizar'])){
 										WHERE idCategoria = {$_GET['apagar']}");
 
 			if (odbc_num_rows($v) > 0 ) {
-				$erro = 'Categoria não pode ser deletada pois existem produtos pertencentes a ela!';	
+				$erro = 'Categoria não pode ser apagada pois existem produtos pertencentes a ela!';	
 			}
 			elseif (odbc_exec($db, "DELETE 
 								FROM 
